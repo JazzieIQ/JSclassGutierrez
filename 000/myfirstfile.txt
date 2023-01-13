@@ -13,7 +13,8 @@ HTML Template
 <body>
     <main>
         <nav>
-            
+
         </nav>
     </main>
 </body>
+</html>
