@@ -1,5 +1,14 @@
 html {
     font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1 { 
+    background-color: black;
+    color: blueviolet;
+    font-weight: 900;
+}
+
+h1:hover {
     text-decoration: underline;
     text-decoration: crimson;
 }
