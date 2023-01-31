@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": ".."
+    },
+    {
+      "path": "../../../CIT82FA22"
+    }
+  ],
+  "settings": {
+    "githubPullRequests.ignoredPullRequestBranches": ["main"]
+  }
+}
