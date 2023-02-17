@@ -1,20 +1,20 @@
 let myName = "Mac Mac"
-let myAge = 32
+let myAge = prompt ("What is one's age?")
 let myHappiness = true
 let newVar = 'something'
-const myConst = 43
-console.log (myAge == myName)
+const myConst = 42
+let myVar = null
+console.log (myAge == myConst)
 console.log (myAge === myName)
 
-let myVar = null
+
 console.log('myVar is typeof ${typeof myVar}')
 
 console.log('myName is typeof ${typeof myName}')
 console.log('myName is value ${myName}')
 console.log('myAge is typeof ${typeof myAge}')
 
-if (false) { let myHappiness = false console.log (myHappiness) } else { const myConst = 43, console.log (myConst) }
-if (true) [alert("Wait. Just Wait, ok thanks.");
-const myAlert = "Hello World! K bye, he he he.";
-const myConsole = "hello world2222222";
-export {myAlert, myConsole};]
+if (true) { let myHappiness = false; console.log(myHappiness);}
+(false); {
+    console.log(myHappiness);
+}
