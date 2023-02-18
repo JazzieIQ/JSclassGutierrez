@@ -6,13 +6,10 @@ const myConst = 42
 let myVar = null
 console.log (myAge == myConst)
 console.log (myAge === myName)
-
-
-console.log('myVar is typeof ${typeof myVar}')
-
-console.log('myName is typeof ${typeof myName}')
-console.log('myName is value ${myName}')
-console.log('myAge is typeof ${typeof myAge}')
+console.log(typeof myVar)
+console.log(typeof myName)
+console.log(typeof myName)
+console.log(typeof myAge)
 
 if (true) { let myHappiness = false; console.log(myHappiness);}
 (false); {
