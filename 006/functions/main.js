@@ -2,7 +2,10 @@
 
 function doMath() {
     let result = 10 * 4
+    console.log ('this is the result ${result}')
 }
+
+doMath ()
 let myName = "Mac Mac"
 let myAge = prompt ("What is one's age?")
 let myHappiness = true
