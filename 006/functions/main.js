@@ -1,11 +1,11 @@
 // Functions are fun!
 
-function doMath() {
-    let result = 10 * 4
+function doMath (a) {
+    let result = a
     console.log ('this is the result ${result}')
 }
 
-doMath ()
+doMath (10)
 let myName = "Mac Mac"
 let myAge = prompt ("What is one's age?")
 let myHappiness = true
