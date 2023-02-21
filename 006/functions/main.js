@@ -2,7 +2,7 @@
 
 function doMath (a) {
     let result = a
-    console.log ('this is the result ${result}')
+    console.log ('this is the result ${a}')
 }
 
 doMath (10)
