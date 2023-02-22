@@ -2,7 +2,13 @@
 
 function doMath(a, b) {
     let result = a * b
-    console.log ('this is the result ' + result)
+    return result
+   // console.log('this is the result ' + [a-b])
+    //console.log('this is the result ' + [a+b])
+    //console.log('this is the result ' + [a/b])
+    //console.log('this is the result ' + [a * b])
+
 }
 
-doMath(10, 4)
+const result = doMath(10, 4)
+console.log ('result was returned from the function ' + result)
