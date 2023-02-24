@@ -1,28 +1,25 @@
 const myConst = 42
 const happiness = true
 let myHappiness = happiness
-function myName() {
-    var stringName = prompt("Give your name please?")
-    return stringName;
-}
-function stringName (myName) {
-    var regPattern = /^[A-Za-z]{2,}$/;
-    var regResult = regPattern.test(myName);
-    if (regResult === false) {
-        alert("I'm not quite sure that is your name.")
-        return stringName;
+let myName = function stringName() {
+    let stringName = prompt ("Give your name please?", Absolum)
+    let namePattern = /^[A-Z][a-z]{0,50}$/;
+    let nameResult = namePattern.test(stringName);
+    if (nameResult === true) {
+        alert(`Thank You ${myName}`)
+        return myName;
     }
     else {
-        alert(`Thank You ${myName}`)
-        return myName;}
+        alert("I'm not quite sure that is your name.")
+        return myName;
+    }
 }
-let stringName = myName 
-console.log(typeof myName)
+let stringName = myName
 function myAge() {
-    var intAge = prompt("What is one's age?")
+    var intAge = prompt("What is one's age?", 00)
     return intAge;
 }
-myAge.userInput = function (intAge)
+function age (intAge)
     {
     var regPattern = /^[0-9]{2,}$/;
     var intResult = regPattern.test(intAge);
@@ -30,12 +27,16 @@ myAge.userInput = function (intAge)
         alert("I'm sorry I need a number.")
         return intAge
     }
-    else {
-        let log1 = String(myAge + 'and' + myHappiness + 'are not the same.')
-        console.log(log1)
-        console.log(typeof myAge)
-        console.log(myAge === myHappiness)
+    else if (myage == 42) {
+        alert ("Pure Bliss")
         return intAge;
-    }    
+    }
+    else 
+        [
+    alert(`${myAge}and${myHappiness}are not the same.`)
+        ]
 }
-console.log(stringName === String)
+console.log(typeof myName)
+console.log(typeof myAge)
+console.log(stringName === myName)
+console.log(myAge === myHappiness)
