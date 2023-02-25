@@ -1,42 +1,49 @@
 const myConst = 42
 const happiness = true
 let myHappiness = happiness
-let myName = function stringName() {
-    let stringName = prompt ("Give your name please?", Absolum)
-    let namePattern = /^[A-Z][a-z]{0,50}$/;
-    let nameResult = namePattern.test(stringName);
-    if (nameResult === true) {
-        alert(`Thank You ${myName}`)
-        return myName;
-    }
-    else {
-        alert("I'm not quite sure that is your name.")
-        return myName;
+let myName = prompt("Give your name please?", "Absolum"); 
+let myAge = prompt("What is one's age?", "00");
+function stringName() {
+                var stringName = myName
+                var namePattern = /^[A-Z][a-z]{0,50}$/;
+                var nameResult = namePattern.test(stringName);
+                if (nameResult === true) {
+                    alert(`Thank You ${stringName}`);
+
+                }
+                else {
+                    alert("I'm not quite sure that is your name.");
     }
 }
-let stringName = myName
-function myAge() {
-    var intAge = prompt("What is one's age?", 00)
-    return intAge;
-}
-function age (intAge)
+string str = "25";
+        try{
+            int number = Integer.parseInt(str);
+            System.out.println(number); // output = 25
+        }
+        catch (NumberFormatException ex){
+            ex.printStackTrace();
+        }
+function intAge(myAge)
     {
-    var regPattern = /^[0-9]{2,}$/;
+    var intAge = myAge
+    var regPattern = /^[0-9]{0,2}$/;
     var intResult = regPattern.test(intAge);
     if (intResult === false) {
-        alert("I'm sorry I need a number.")
-        return intAge
+        alert("I'm sorry I need a number.");
+        console.log("Needs a number")
     }
-    else if (myage == 42) {
-        alert ("Pure Bliss")
-        return intAge;
+    else if (myage === 42) {
+        alert("Pure Bliss");
     }
-    else 
+    else
         [
-    alert(`${myAge}and${myHappiness}are not the same.`)
+            alert(`${myAge}and${myHappiness}are not the same.`)
         ]
+    return intAge
 }
 console.log(typeof myName)
 console.log(typeof myAge)
+console.log(typeof happiness)
+console.log(typeof myConst)
 console.log(stringName === myName)
 console.log(myAge === myHappiness)
