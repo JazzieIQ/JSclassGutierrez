@@ -15,9 +15,8 @@ function stringName() {
                     alert("I'm not quite sure that is your name.");
     }
 }
-string str = "25";
         try{
-            int number = Integer.parseInt(str);
+            int number = Integer.parseInt(myAge);
             System.out.println(number); // output = 25
         }
         catch (NumberFormatException ex){
