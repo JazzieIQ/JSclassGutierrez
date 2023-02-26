@@ -14,16 +14,15 @@ function stringName() {
     console.log(stringName)
     return stringName
 }
-function intAge(myAge)
+function testAge(myAge)
 {
-    var intAge = parseInt(myAge); // output = 25
-    var intAge = /^[0-9]+$/;
-    var intResult = intAge.test(intAge);
-    if (intResult === false) {
+    var intAge = String.fromCharCode(myAge.which)
+   // var intResult = intAge.test(intAge);
+    if (!(/^[0-9]+$/.test(myAge))) {
         alert("I'm sorry I need a number.");
-        console.log("Needs a number")
+        console.log("Still need a number")
     }
-    else if (myage === 42) {
+    else if (intAge === myConst ) {
         alert("Pure Bliss");
     }
     else
