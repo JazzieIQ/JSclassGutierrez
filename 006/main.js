@@ -64,9 +64,9 @@ let myHappiness = function testHappiness(myHappiness) {
     }
 }
 myHappiness(happiness)
+console.log(happiness)
+console.log(myHappiness === happiness)
 console.log(typeof myName)
 console.log(typeof intAge)
 console.log(typeof happiness)
 console.log(typeof myConst)
-console.log(happiness)
-console.log(myHappiness === happiness)
