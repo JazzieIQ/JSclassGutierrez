@@ -17,7 +17,7 @@ function testName(myName)
 console.log("Their name is " + myName)
 testName(myName)
 let myAge = prompt("What is one's age?", "00");
-console.log("Their age is" + myAge)
+console.log("Their age is " + myAge)
 function testAge(myAge)
 {
     //let intAge = 
