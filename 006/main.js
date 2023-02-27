@@ -16,13 +16,13 @@ function stringName(myName)
 stringName(myName)
 console.log("Their name is " + myName)
 let myAge = prompt("What is one's age?", "00");
-function intAge(myAge)
+function determineIntAge(myAge)
 {
-    parseInt(myAge)
-    return myAge;
+        return parseInt(myAge)
+
 }
-intAge(myAge)
-console.log("Their age is " + parseInt(myAge))
+determineAge(myAge)
+console.log("Their age is " + intAge(myAge))
 function testAge(intAge)
 {
     if (!(myAge.match(/^[0-9]+$/)))
