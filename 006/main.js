@@ -2,7 +2,7 @@ const myConst = 42
 const happiness = true
 let myHappiness = happiness
 let myName = prompt('Give your name please?', 'Absolum') 
-function testName(myName)
+function stringName(myName)
     {
         if (myName.match(/^[A-Za-z]+$/)) 
         {
@@ -15,35 +15,56 @@ function testName(myName)
 
 }
 console.log("Their name is " + myName)
-testName(myName)
+stringName(myName)
 let myAge = prompt("What is one's age?", "00");
+function intAge(myAge)
+{
+    parseInt(myAge)
+    return myAge;
+}
 console.log("Their age is " + myAge)
+
+intAge(myAge)
+
 function testAge(myAge)
 {
-    //let intAge = 
-    // String.fromCharCode(myAge)
-   // var intResult = intAge.test(intAge);
-    if (myAge.match(/^[0-9]+$/)) {
+    if (!(myAge.match(/^[0-9]+$/)))
+    {
         alert("I'm sorry I need a number.");
         console.log("Still need a number")
         return myAge
     }
-    else if (intAge === myConst ) {
+    else if (myAge === myConst ) {
         alert("Pure Bliss");
     }
     else
         [
-            alert(`${myAge}and${myHappiness}are not the same.`),
-            myHappiness = false
+            alert("I feel it is " + happiness + " that you are happy"),
         ]
-    System.out.println(myAge)
-    return intAge;
-}
 
+return intAge;
+}
+function testhappiness(happiness)
+{
+    let myHappiness = happiness
+    if (myAge == myConst) (
+        myHappiness = true
+    )
+    else if (myAge === myConst) {
+        myHappiness = true
+    }
+    else (!(myAge == myConst))
+    {
+        myHappiness = false
+        console.log("I don't think I know if they are happy.")
+        return myHappiness;
+    }
+}
 testAge(myAge)
+testhappiness (happiness)
 console.log(typeof myName)
 console.log(typeof myAge)
 console.log(typeof happiness)
 console.log(typeof myConst)
-console.log(testName=== myName)
-console.log(myAge == myHappiness);
+console.log(happiness)
+console.log(myHappiness === happiness);
