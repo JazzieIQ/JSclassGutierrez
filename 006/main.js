@@ -1,6 +1,6 @@
 const myConst = 42
 const happiness = true
-let myHappiness = happiness
+
 let myName = prompt('Give your name please?', 'Absolum'); 
 function stringName(myName)
     {
@@ -23,7 +23,7 @@ function intAge(myAge)
     return myAge;
 }
 intAge(myAge)
-console.log("Their age is " + myAge)
+console.log("Their age is " + parseInt(myAge))
 function testAge(intAge)
 {
     if (!(myAge.match(/^[0-9]+$/)))
@@ -44,27 +44,30 @@ function testAge(intAge)
 
 return intAge;
 }
-function testhappiness(happiness)
-{
-    let myHappiness = happiness
-    if (myAge == myConst) (
+let myHappiness = happiness
+function testHappiness(myHappiness) {
+    if (intAge == myConst) (
         myHappiness = true
     )
-    else if (myAge === myConst) {
+    else if (intAge === myConst) {
         myHappiness = true
     }
-    else (!(myAge == myConst))
-    {
+    else if (!(intAge == myConst)) {
         myHappiness = false
         console.log("I don't think I know if they are happy.")
         return myHappiness;
     }
+    else (!(intAge === myConst))
+    {
+        myHappiness = false
+        console.log("I don't think they are happy.")
+        return myHappiness;
+    }
 }
-testAge(myAge)
-testhappiness (happiness)
+testHappiness (myHappiness)
 console.log(typeof myName)
-console.log(typeof myAge)
+console.log(typeof intAge)
 console.log(typeof happiness)
 console.log(typeof myConst)
 console.log(happiness)
-console.log(myHappiness === happiness);
+console.log(myHappiness === happiness)
