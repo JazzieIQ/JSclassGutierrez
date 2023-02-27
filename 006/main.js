@@ -1,6 +1,5 @@
 const myConst = 42
 const happiness = true
-
 let myName = prompt('Give your name please?', 'Absolum'); 
 function stringName(myName)
     {
@@ -44,13 +43,13 @@ function testAge(intAge)
 
 return intAge;
 }
-let myHappiness = happiness
-function testHappiness(myHappiness) {
+let myHappiness = function testHappiness(myHappiness) {
     if (intAge == myConst) (
         myHappiness = true
     )
     else if (intAge === myConst) {
         myHappiness = true
+        console.log("ROFL! They made a funny.")
     }
     else if (!(intAge == myConst)) {
         myHappiness = false
@@ -64,7 +63,7 @@ function testHappiness(myHappiness) {
         return myHappiness;
     }
 }
-testHappiness (myHappiness)
+myHappiness(happiness)
 console.log(typeof myName)
 console.log(typeof intAge)
 console.log(typeof happiness)
