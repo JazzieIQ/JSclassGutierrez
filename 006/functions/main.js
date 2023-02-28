@@ -1,17 +1,16 @@
 const myConst = 42
 const happiness = true
 let myName = prompt('Give your name please?', 'Absolum'); 
-function testName(myName)
-    {
+testName = (myName) => {
     if (!(typeof myName == String))
-    {
-        alert("Thank You " + [myName])
-    }
+        {
+            alert("Thank You " + [myName])
+        }
     else {
             alert("I'm not quite sure that is your name.");
             myName = prompt('Give your name please?', 'Absolum');
             stringName(myName)
-        }
+    }
 }
 let stringName = testName(myName)
 testName(myName)
