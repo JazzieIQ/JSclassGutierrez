@@ -1,35 +1,32 @@
 const myConst = 42
 const happiness = true
 let myName = prompt('Give your name please?', 'Absolum'); 
-testName = (myName) => {
-    if (!(typeof myName == String))
-        {
-            alert("Thank You " + [myName])
-        }
-    else {
-            alert("I'm not quite sure that is your name.");
-            myName = prompt('Give your name please?', 'Absolum');
-            stringName(myName)
+stringName = (myName) =>
+{
+    if (typeof myName !== typeof myConst)
+    {
+        
+        alert(`Thank You ${[myName]}`)
+    }
+    else
+    {
+        alert("I'm not quite sure that is your name.");
+        myName = prompt('Give your name please?', 'Absolum');
+        stringName(myName)
     }
 }
-let stringName = testName(myName)
-testName(myName)
+stringName(myName)
 console.log("Their name is " + myName)
 let myAge = prompt("What is one's age?", "00");
 function determineIntAge(myAge)
 {
         return parseInt(myAge)
-
 }
 let intAge = determineIntAge(myAge)
 console.log("Their age is " + [intAge])
 function testAge(intAge)
 {
     if (!(typeof intAge == typeof myConst))
-        //!(intAge.match(/^[0-9]+$/,)))
-        //!(intAge == myConst))
-        //RegExp.prototype.test(newMyage) (!(/^[0-9]+$/,)))
-        
     {
         alert("I'm sorry I need a number.")
         console.log("Still need a number")
@@ -57,7 +54,7 @@ return intAge;
 }
 testAge(intAge)
 //happiness is a constant that we will use to measure how joyous the user feels through their age input.
-//Clever users will know "42" is the best Answer regardless of their true age.
+//Clever users will know "42" is the best answer regardless of their true age.
 //Clever programmers will log what they really know.
 let myHappiness = happiness
 function testHappiness(myHappiness) {
