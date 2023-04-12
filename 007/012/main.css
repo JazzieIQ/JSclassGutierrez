@@ -1,1 +1,9 @@
-kingsInquiry ()
+html {
+font-size: 24px;
+}
+prompt{
+    transition-delay:6000ms;
+}
+kinglyAnswer{
+    transition-delay: 5s;
+}

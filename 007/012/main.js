@@ -9,9 +9,9 @@ const updateDOM = (input) => {
     }
     else {
         alert("THOU HAS FAILED THE KING!")
-        kingsInquiry();
+        kingsInquiry;
     }
 }
-const kingsInquiry = prompt("Respond for the King...", "kingly answer")
-const kinglyAnswer = "African or European?"
+const kingsInquiry = prompt("Respond for the King...", "kingly answer");
+const kinglyAnswer = "The Kings answer be:" + "\n" + '"African or European?"';
 updateDOM(kinglyAnswer)
