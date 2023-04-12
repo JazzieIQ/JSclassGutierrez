@@ -9,6 +9,7 @@ const updateDOM = (input) => {
     }
     else {
         alert("THOU HAS FAILED THE KING!")
+        const kingsInquiry = prompt("Respond for the King...", "kingly answer");
         kingsInquiry;
     }
 }
