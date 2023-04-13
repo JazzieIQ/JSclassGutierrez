@@ -1,9 +1,28 @@
 html {
 font-size: 24px;
+background-color: grey;
+font-family: old english text mt;
 }
-prompt{
-    transition-delay:6000ms;
+h1 {
+        color: blue;
 }
-kinglyAnswer{
-    transition-delay: 5s;
+h2 {
+    color: blue;
+}
+button {
+    font-size: 1.25rem;
+    font-family: old english text mt;
+    font-style: italic;
+    text-decoration: wavy;
+    padding: 15px;
+    margin: 25px;
+    background-color: gold;
+}
+article{
+    padding: 128px;
+    background-color: black;
+} 
+p {
+    font-size: 2rem;
+    color: gold !important;
 }

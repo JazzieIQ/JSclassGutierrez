@@ -4,15 +4,24 @@ const updateDOM = (input) => {
     if (kingsInquiry == "kingly answer") {
         var divEl = document.querySelector('#output')
         var p = document.createElement('p')
-        p.textContent = input
+        p.textContent = kinglyAnswer
         divEl.appendChild(p);
     }
     else {
-        alert("THOU HAS FAILED THE KING!")
-        const kingsInquiry = prompt("Respond for the King...", "kingly answer");
-        kingsInquiry;
+        var divEl = document.querySelector('#output')
+        var p = document.createElement('p')
+        p.textContent = "The hour is past and thou art DOOMED!!!!!"
+        divEl.appendChild(p);
+        alert("THOU HAS FAILED THE KING!");
+        //return;
     }
 }
-const kingsInquiry = prompt("Respond for the King...", "kingly answer");
+const kingsInquiry = prompt("Consider wisley as thou speaks for the King...", "kingly answer");
 const kinglyAnswer = "The Kings answer be:" + "\n" + '"African or European?"';
 updateDOM(kinglyAnswer)
+document.querySelector('#refreshPage').addEventListener('click', () => {window.location.reload(true);})
+/*
+function refreshPage(){
+    window.location.reload(true);
+}
+*/
