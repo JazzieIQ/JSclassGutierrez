@@ -12,15 +12,23 @@ const updateDOM = (input) => {
         var p = document.createElement('p')
         p.textContent = "The hour is past and thou art DOOMED!!!!!"
         divEl.appendChild(p);
-        alert("THOU HAS FAILED THE KING!");
+        alert("THOU HAST FAILED THE KING!");
         //return;
     }
 }
 const kingsInquiry = prompt("Consider wisley as thou speaks for the King...", "kingly answer");
-const kinglyAnswer = "The Kings answer be:" + "\n" + '"African or European?"';
+const kinglyAnswer ='"African or European?"';
 updateDOM(kinglyAnswer)
-document.querySelector('#refreshPage').addEventListener('click', () => {window.location.reload(true);})
+function refreshInquiry() {
+    document.getElementById("output").innerHTML= "";
+    kingsInquiry = prompt("Consider wisley as thou speaks for the King...", "kingly answer");
+}
 /*
+addEventListener('click', () => {
+        document.getElementById("output").
+    })
+document.querySelector('#refreshPage').addEventListener('click', () => {window.location.reload(true);})
+addEventListener('click', () => { refreshInquiry();})
 function refreshPage(){
     window.location.reload(true);
 }

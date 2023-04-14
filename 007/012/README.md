@@ -1,4 +1,3 @@
-Week 7
-Are you using devTools?
-WHy 
-Yes I have VS Code as my IDE and a few shell terminals such as gitbash and postgresql. Also I have intelliJ and Github Desktop and Github Copilot. And I use Google Chrome inspect features.
+# Week 7
+# Are you using devTools?
+Why yes I use Google Chrome inspect features. I have used it to look at HTML and CSS elements and am currently picking up how to look at .js files in it now.

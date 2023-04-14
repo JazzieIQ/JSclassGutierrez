@@ -9,7 +9,7 @@ h1 {
 h2 {
     color: blue;
 }
-button {
+#refresh {
     font-size: 1.25rem;
     font-family: old english text mt;
     font-style: italic;
@@ -18,10 +18,29 @@ button {
     margin: 25px;
     background-color: gold;
 }
-article{
-    padding: 128px;
+article {
+    position: relative;
+    inline-block;
+    padding: 100px;
+    color: blue;
+    font-size:2 rem;
+    text-align: left;
     background-color: black;
-} 
+}
+header {
+    text-align:start;
+    padding: 25px;
+}
+input {
+    align-content: center;
+    font-size: 1.25rem;
+    font-family: old english text mt;
+    font-style: italic;
+    text-decoration: wavy;
+    padding: 15px;
+    margin: 25px;
+    background-color: gold;
+}
 p {
     font-size: 2rem;
     color: gold !important;
