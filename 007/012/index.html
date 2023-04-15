@@ -8,20 +8,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css"></link>
     <Link rel="icon" href="/icons/music_drums_icon_157499.ico"></Link>
-<script type="module" src="main.js"></script>
+    <script type="module" src="main.js"></script>
+    <script>
+    /*
+        const updateDOM = (kingsInquiry) => {
+            if (kingsInquiry == "kingly answer") {
+            var divEl = document.querySelector('#output')
+            var p = document.createElement('p')
+            p.textContent = kinglyAnswer
+            divEl.appendChild(p);
+    }
+        else {
+            var divEl = document.querySelector('#output')
+            var p = document.createElement('p')
+            p.textContent = "The hour is past and thou art DOOMED!!!!!"
+            divEl.appendChild(p);
+            alert("THOU HAST FAILED THE KING!");
+    }
+}
+    function refreshInquiry() {
+        document.getElementById("output").innerHTML = "";
+        const kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "kingly answer");
+        console.log("They transcribed " + '"' + kingsInquiry +'"');
+        const kinglyAnswer ='"African or European?"';
+        updateDOM(kinglyAnswer);
+    }
+    */
+    </script>
 </head>
 <body>
     <h1>A King's Inquiry</h1>
-    <button id="refresh" type="button" onclick="refreshInquiry()">Attempt Again</button>
+    <button script="src: main.js" id="refresh" onclick="refreshInquiry()">Attempt Again</button>
     <br>
     <br>
     <br>
     <h2>Pray thy whit knowest "...the velocity of a laden swallow..." hence what shall thou transcribe?</h2>
         <article>
-            <header> King's answer be:</header>
-            <div id="output">
-            </div>
+            <div id="output"></div>
         </article>
 </body>
 </html>
-<input id="answer" placeholder="Kingly Answer" type="text">
