@@ -1,9 +1,9 @@
 //update the DOM
 const updateDOM = (kingsInquiry) => {
-    if (kingsInquiry == "kingly answer") {
+    if (kingsInquiry == "a kingly answer") {
         var divEl = document.querySelector('#output')
         var p = document.createElement('p')
-        p.textContent = kinglyAnswer
+        p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         return;
     }
@@ -16,7 +16,7 @@ const updateDOM = (kingsInquiry) => {
         return;
     }
 }
-var kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "kingly answer");
+var kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "a kingly answer");
 var scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
 const kinglyAnswer ='"African or European?"';
 updateDOM(kingsInquiry);
@@ -30,7 +30,7 @@ var kingsArray = console.log(kingsRecord.textContent.split(" "));
 // Play the game again
 
 document.querySelector('#replay').addEventListener('click', () => {
-    var kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "kingly answer");
+    var kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "a kingly answer");
     updateDOM(kingsInquiry);
     scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     kingsRecord = document.getElementById("output");
