@@ -5,6 +5,7 @@ const updateDOM = (kingsInquiry) => {
         var p = document.createElement('p')
         p.textContent = kinglyAnswer
         divEl.appendChild(p);
+        return;
     }
     else {
         var divEl = document.querySelector('#output')
@@ -12,22 +13,41 @@ const updateDOM = (kingsInquiry) => {
         p.textContent = "The hour is past and thou art DOOMED!!!!!"
         divEl.appendChild(p);
         alert("THOU HAST FAILED THE KING!");
+        return;
     }
 }
-const kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "kingly answer");
-console.log("They transcribed " + '"' + kingsInquiry + '"');
+var kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "kingly answer");
+var scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
 const kinglyAnswer ='"African or European?"';
 updateDOM(kingsInquiry);
+var kingsRecord = document.getElementById("output");
+var kingsArray = console.log(kingsRecord.textContent.split(" "));
 
-function refreshInquiry() {
+
+// Play the game again
+
+document.querySelector('#replay').addEventListener('click', () => {
+    var kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "kingly answer");
+    updateDOM(kingsInquiry);
+    scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
+    kingsRecord = document.getElementById("output");
+    kingsArray = console.log(kingsRecord.textContent.split(" "));
+})
+
+//refresh Output div
+
+document.querySelector('#refresh').addEventListener('click', () => {
     document.getElementById("output").innerHTML = "";
-    kingsInquiry;
-    updateDOM(kinglyAnswer);
-    }
+})
+
+
 
 /*
+function refreshInquiry() {
 
-
+ 
+    }
+window.location.reload(true);
 const refreshInquiry() {
     document.getElementById("output").addEventListener('click', () => {document.getElementById("output").innerHTML = ""});
 };
@@ -41,7 +61,7 @@ addEventListener('click', () => {
         document.getElementById("output").
     })
 
-    document.querySelector('#refresh').addEventListener('click', () => {window.location.reload(true);})
+
 addEventListener('click', () => { refreshInquiry();})
 function refreshPage(){
     window.location.reload(true);
@@ -51,6 +71,6 @@ function refreshPage(){
 
 <input id="answerInquiry" placeholder="Kingly Answer"/>
             <button id="transcribe">Transcribe</button>
-            
+    onclick="refreshInquiry()"
 
 */
