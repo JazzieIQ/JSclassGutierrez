@@ -20,6 +20,9 @@ var kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...
 var scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
 const kinglyAnswer ='"African or European?"';
 updateDOM(kingsInquiry);
+
+//div "output" split into array. Array increase with attempt.
+
 var kingsRecord = document.getElementById("output");
 var kingsArray = console.log(kingsRecord.textContent.split(" "));
 
@@ -34,13 +37,11 @@ document.querySelector('#replay').addEventListener('click', () => {
     kingsArray = console.log(kingsRecord.textContent.split(" "));
 })
 
-//refresh Output div
+//refresh Output div. All code is reset including the array.
 
 document.querySelector('#refresh').addEventListener('click', () => {
     document.getElementById("output").innerHTML = "";
 })
-
-
 
 /*
 function refreshInquiry() {
