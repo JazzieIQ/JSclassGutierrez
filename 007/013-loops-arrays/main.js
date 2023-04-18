@@ -1,9 +1,10 @@
-//update the DOM
+// A Bridge Too Far: The Kings Inquiry HTML/Text Based Game.
 
 // Key phrasing
 
 const kinglyAnswer = '"African or European?"';
-
+var count = 0;
+var rateCount = 0;
 
 //console.log (document.getElementById('output'))
 const updateDOM = (kingsInquiry) => {
@@ -12,6 +13,8 @@ const updateDOM = (kingsInquiry) => {
         var p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
+        rateCount;
+        rateCount += 1;
         return;
     }
     else if (kingsInquiry == "a kingly answer") {
@@ -52,18 +55,31 @@ const updateDOM = (kingsInquiry) => {
     }
 }
 
-const buttonCount = document.getElementById("replay"),
-  count = 0;
+var buttonCount = document.getElementById("replay"),
+  count;
 replay.onclick = function() {
   count += 1;
-  replay.innerHTML = "Attempt: " + count;
+    replay.innerHTML = "Attempt: " + count;
+    return count;
 };
 
+// calculate success rate
+
+const successRateUpdate = document.getElementById("rate").onclick = function () {
+    const rateSuccess = rateCount / count;
+    console.log(rateSuccess);
+    const success = rate.innerHTML = "Success: " + rateSuccess;
+    success;
+    return;
+};
+
+//update the DOM
 const updateDOMArray = (kingsInquiry) => {
         var divEl = document.querySelector('#array')
         var a = document.createElement('a')
-    a.textContent = '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
-        divEl.appendChild(a);
+    a.textContent = successRateUpdate + '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
+    divEl.appendChild(a);
+    
         return;
         }
 
@@ -72,8 +88,8 @@ const updateDOMArray = (kingsInquiry) => {
 
 document.querySelector('#replay').addEventListener('click', () => {
     buttonCount;
-    const kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
-    const scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
+    var kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
+    var scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
     kinglyAnswer;
     updateDOM(kingsInquiry);
@@ -85,23 +101,9 @@ document.querySelector('#replay').addEventListener('click', () => {
     const noNullKingsArray = kingsRecord.filter(element => element !== '');
     console.log(noNullKingsArray);
     noNullKingsArray.push('I told you that you were doomed! Oh but nobody listens to me!');
-    return kingsInquiry;
 })
 
 
-// calculate success rate
-
-const rateSuccess = document.getElementById("rate"),
-  rateCount = 0;
-    replay.onclick = function() {
-        if (kingsInquiry = true) {
-        rateCount += 1;
-        rate.innerHTML = "Success: " + rateCount/count;
-        }
-        else {
-        rate.innerHTML = "Success: " + rateCount/count;
-        }
-};
 
 //refresh Output div. All code is reset including the array.
 
@@ -111,8 +113,7 @@ document.querySelector('#refresh').addEventListener('click', () => {
 
 // unused code
 /*
-const kingsBoolean = kingsIquiry;
-console.log(kingsBoolean);
+
 //    const updateArray = kingsArray.replace("", 'I told you so, oh but nobody listens to me!' )
 
     // updateDOMArray(kingsInquiry);
