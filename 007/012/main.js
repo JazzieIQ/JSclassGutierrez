@@ -3,14 +3,14 @@ const updateDOM = (kingsInquiry) => {
     if (kingsInquiry == "a kingly answer") {
         var divEl = document.querySelector('#output')
         var p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
+        p.textContent = "The King's answer be: " + kinglyAnswer + '\n'
         divEl.appendChild(p);
         return;
     }
     else {
         var divEl = document.querySelector('#output')
         var p = document.createElement('p')
-        p.textContent = "The hour is past and thou art DOOMED!!!!!"
+        p.textContent = "The hour is past and thou art DOOMED!!!!!" + '\n'
         divEl.appendChild(p);
         alert("THOU HAST FAILED THE KING!");
         return;
@@ -24,7 +24,7 @@ updateDOM(kingsInquiry);
 //div "output" split into array. Array increase with attempt.
 
 var kingsRecord = document.getElementById("output");
-var kingsArray = console.log(kingsRecord.textContent.split(" "));
+var kingsArray = console.log(kingsRecord.textContent.split('\n'));
 
 
 // Play the game again
@@ -34,7 +34,7 @@ document.querySelector('#replay').addEventListener('click', () => {
     updateDOM(kingsInquiry);
     scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     kingsRecord = document.getElementById("output");
-    kingsArray = console.log(kingsRecord.textContent.split(" "));
+    kingsArray = console.log(kingsRecord.textContent.split("\n"));
 })
 
 //refresh Output div. All code is reset including the array.
