@@ -8,7 +8,17 @@ var rateCount = 0;
 
 //console.log (document.getElementById('output'))
 const updateDOM = (kingsInquiry) => {
-    if (kingsInquiry == "I am King I'm supposed to know these things.") {
+    if (kingsInquiry == "African or European?") {
+        var divEl = document.querySelector('#output')
+        var p = document.createElement('p')
+        p.textContent = "The King's answer be: " + kinglyAnswer
+        divEl.appendChild(p);
+        rateCount;
+        rateCount += 1;    
+        //console.log(rateCount);
+        return;
+    }
+    else if (kingsInquiry == "I am King I'm supposed to know these things.") {
         var divEl = document.querySelector('#output')
         var p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -101,7 +111,7 @@ document.querySelector('#replay').addEventListener('click', () => {
     noNullKingsArray.push('I told you that you were doomed! Oh but nobody listens to me!');
 
     // calculate success rate
-    
+
     const rateSuccess = rateCount / count;
     console.log(rateSuccess);
     const success = rate.innerHTML = "Success: " + rateSuccess;
