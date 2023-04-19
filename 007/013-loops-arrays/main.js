@@ -14,7 +14,8 @@ const updateDOM = (kingsInquiry) => {
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
-        rateCount += 1;
+        rateCount += 1;    
+        //console.log(rateCount);
         return;
     }
     else if (kingsInquiry == "a kingly answer") {
@@ -22,6 +23,8 @@ const updateDOM = (kingsInquiry) => {
         var p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
+        rateCount;
+        rateCount += 1;
         return;
     }
     else if (kingsInquiry == "five") {
@@ -29,6 +32,8 @@ const updateDOM = (kingsInquiry) => {
         var p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
+        rateCount;
+        rateCount += 1;
         return;
     }
     else if (kingsInquiry == "Holy Hand Grenade of Antioch") {
@@ -36,6 +41,8 @@ const updateDOM = (kingsInquiry) => {
         var p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
+        rateCount;
+        rateCount += 1;;
         return;
     }
     else if (kingsInquiry == "I am your King") {
@@ -43,6 +50,8 @@ const updateDOM = (kingsInquiry) => {
         var p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
+        rateCount;
+        rateCount += 1;
         return;
     }
     else {
@@ -51,6 +60,7 @@ const updateDOM = (kingsInquiry) => {
         p.textContent = "The hour is past and thou art DOOMED!!!!!"
         divEl.appendChild(p);
         alert("THOU HAST FAILED THE KING!");
+        rateCount;
         return;
     }
 }
@@ -63,28 +73,16 @@ replay.onclick = function() {
     return count;
 };
 
-// calculate success rate
-
-const successRateUpdate = document.getElementById("rate").onclick = function () {
-    const rateSuccess = rateCount / count;
-    console.log(rateSuccess);
-    const success = rate.innerHTML = "Success: " + rateSuccess;
-    success;
-    return;
-};
-
 //update the DOM
 const updateDOMArray = (kingsInquiry) => {
         var divEl = document.querySelector('#array')
         var a = document.createElement('a')
-    a.textContent = successRateUpdate + '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
+    a.textContent = '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
     divEl.appendChild(a);
-    
         return;
         }
 
-
-    // Play the game/ attemp again
+// Play the game/ attemp again
 
 document.querySelector('#replay').addEventListener('click', () => {
     buttonCount;
@@ -101,8 +99,14 @@ document.querySelector('#replay').addEventListener('click', () => {
     const noNullKingsArray = kingsRecord.filter(element => element !== '');
     console.log(noNullKingsArray);
     noNullKingsArray.push('I told you that you were doomed! Oh but nobody listens to me!');
-})
 
+    // calculate success rate
+    
+    const rateSuccess = rateCount / count;
+    console.log(rateSuccess);
+    const success = rate.innerHTML = "Success: " + rateSuccess;
+    success;
+})
 
 
 //refresh Output div. All code is reset including the array.
@@ -113,6 +117,11 @@ document.querySelector('#refresh').addEventListener('click', () => {
 
 // unused code
 /*
+
+const successRateUpdate = document.getElementById("refresh").onclick = function () {
+
+    return;
+};
 
 //    const updateArray = kingsArray.replace("", 'I told you so, oh but nobody listens to me!' )
 
