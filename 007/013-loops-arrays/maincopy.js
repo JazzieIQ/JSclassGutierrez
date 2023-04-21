@@ -1,19 +1,31 @@
-//update the DOM
+// A Bridge Too Far: The Kings Inquiry HTML/Text Based Game.
 
 // Key phrasing
 
 const kinglyAnswer = '"African or European?"';
+var count = 0;
 var rateCount = 0;
 
 //console.log (document.getElementById('output'))
 const updateDOM = (kingsInquiry) => {
-    if (kingsInquiry == "I am King I'm supposed to know these things.") {
+    if (kingsInquiry == "African or European?") {
         var divEl = document.querySelector('#output')
         var p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
-        rateCount += 1;
+        rateCount += 1;    
+        //console.log(rateCount);
+        return;
+    }
+    else if (kingsInquiry == "I am King I'm supposed to know these things.") {
+        var divEl = document.querySelector('#output')
+        var p = document.createElement('p')
+        p.textContent = "The King's answer be: " + kinglyAnswer
+        divEl.appendChild(p);
+        rateCount;
+        rateCount += 1;    
+        //console.log(rateCount);
         return;
     }
     else if (kingsInquiry == "a kingly answer") {
@@ -35,6 +47,15 @@ const updateDOM = (kingsInquiry) => {
         return;
     }
     else if (kingsInquiry == "Holy Hand Grenade of Antioch") {
+        var divEl = document.querySelector('#output')
+        var p = document.createElement('p')
+        p.textContent = "The King's answer be: " + kinglyAnswer
+        divEl.appendChild(p);
+        rateCount;
+        rateCount += 1;;
+        return;
+    }
+    else if (kingsInquiry == "I am Authur, King of the Britains.") {
         var divEl = document.querySelector('#output')
         var p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -63,30 +84,32 @@ const updateDOM = (kingsInquiry) => {
     }
 }
 
-const buttonCount = document.getElementById("replay"),
-  count = 0;
+var buttonCount = document.getElementById("replay"),
+  count;
 replay.onclick = function() {
   count += 1;
-  replay.innerHTML = "Attempt: " + count;
+    replay.innerHTML = "Attempt: " + count;
+    return count;
 };
 
+//update the DOM
+
 const updateDOMArray = (kingsInquiry) => {
-        const divEl = document.querySelector('#array')
-        const a = document.createElement('a')
+        var divEl = document.querySelector('#array')
+        var a = document.createElement('a')
     a.textContent = '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
-        divEl.appendChild(a);
+    divEl.appendChild(a);
         return;
         }
 
-
-    // Play the game/ attemp again
+// Play the game/ attemp again
 
 document.querySelector('#replay').addEventListener('click', () => {
     buttonCount;
     var kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
-    const scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
+    var scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
-    //kinglyAnswer;
+    kinglyAnswer;
     updateDOM(kingsInquiry);
 
     //div "output" split into array. Array increase with attempt.
@@ -96,16 +119,40 @@ document.querySelector('#replay').addEventListener('click', () => {
     const noNullKingsArray = kingsRecord.filter(element => element !== '');
     console.log(noNullKingsArray);
     noNullKingsArray.push('I told you that you were doomed! Oh but nobody listens to me!');
-    return kingsInquiry;
-})
+    
 
+    // Give success rate Array with For Loop.
+    let i = noNullKingsArray.length -2;
+    for (i = 0; i < count; i++) {
+        
+        // calculate success rate
+    
+        const rateSuccess = rateCount / count;
+        let appendDivElRate = "; Success Rates Array: ";
+        const rateSuccessArray = [];
+        const success = rate.innerHTML = "Success: " + rateSuccess + appendDivElRate;
+        success;
+        document.getElementById("rate").append(rateSuccessArray);
+        console.log(rateSuccessArray);
+        const win = 1;
+        const lose = 0;
 
-// calculate success rate
-
-const rateSuccess = document.getElementById("rate")
-    replay.onclick = function() {
-        rate.innerHTML = "Success: " + rateCount/count;
-};
+        if (rateSuccess == 1) {
+            //win;
+            rateSuccessArray.push(win);
+            document.getElementById('rate').innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+        }
+        else if (rateSuccess < 1) {
+            //lose;
+            rateSuccessArray.push(lose);
+            document.getElementById('rate').innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+        }
+        else {
+            null;
+        }
+    };
+    return;
+});
 
 //refresh Output div. All code is reset including the array.
 
@@ -115,8 +162,87 @@ document.querySelector('#refresh').addEventListener('click', () => {
 
 // unused code
 /*
-const kingsBoolean = kingsIquiry;
-console.log(kingsBoolean);
+
+    if (kingsInquiry == "African or European?") {
+        for (i = 0; i < count; i++) {
+            //win;
+            //rateSuccessArray.push(win);
+            document.getElementById('rate').append(rateSuccessArray(win));
+        };
+    }
+    else if (kingsInquiry == "I am King I'm supposed to know these things.") {
+        for (i = 0; i < count; i++) {
+            //win
+            rateSuccessArray.push(win);
+            document.getElementById('rate').innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+        };
+    }
+    else if (kingsInquiry == "a kingly answer") {
+        for (i = 0; i < count; i++) {
+            //win;
+            rateSuccessArray.push(win);
+            document.getElementById('rate').innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+        };
+    }
+    else if (kingsInquiry == "I am your King"){
+        for (i = 0; i < count; i++) {
+            //win
+            rateSuccessArray.push(win);
+            document.getElementById('rate').innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+        };
+    }
+    else if (kingsInquiry == "five"){
+        for (i = 0; i < count; i++) {
+            //win
+            rateSuccessArray.push(win);
+            document.getElementById('rate').innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+        };
+    }
+    else if (kingsInquiry == "I am Authur, King of the Britains."){
+        for (i = 0; i < count; i++) {
+            //win
+            rateSuccessArray.push(win);
+            document.getElementById('rate').innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+        };
+    }
+    else if (kingsInquiry == "Holy Hand Grenade of Antioch"){
+        for (i = 0; i < count; i++) {
+            //win
+            rateSuccessArray.push(win);
+            document.getElementById('rate').innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+        };
+    }
+    else {
+        for (i = 0; i < count; i++) {
+            rateSuccessArray.push(lose);
+            document.getElementById('rate').innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+        };
+    }
+    return;
+
+        if (kingsInquiry.includes(kinglyAnswer)) {
+            array.forEach(kingsInquiry.includes(kinglyAnswer) => {
+                successResult += 1;
+                const elRate = document.getElementById('rate');
+                const text = document.createTextNode(rateSuccessArray.push(successArray));
+                console.log(rateSuccessArray);
+                elRate.appendChild(text);
+            });
+        }
+        else(!(kingsInquiry.includes(kinglyAnswer))) {
+            array.forEach(kingsInquiry.includes("ratecount;") => {
+            successResult += 0;
+            const elRate = document.getElementById('rate');
+            const text = document.createTextNode(rateSuccessArray.push(successArray));
+            console.log(rateSuccessArray);
+            elRate.appendChild(text);
+            });
+        }
+const successRateUpdate = document.getElementById("refresh").onclick = function () {
+
+    return;
+};
+
 //    const updateArray = kingsArray.replace("", 'I told you so, oh but nobody listens to me!' )
 
     // updateDOMArray(kingsInquiry);
