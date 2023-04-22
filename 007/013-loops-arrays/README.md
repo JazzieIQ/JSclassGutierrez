@@ -16,3 +16,7 @@ Additonally I created a function that asks for user inout via a prompt, I did tr
 Also once I finished my code where user input function inputs text via "p" through the updateDom code. I console an ever updating array of text that changes based on user input. my array function will rewrite and increae with every attempt by my user. This portion of code should reflect "learning about arrays" portion.
 
 Lastly I had to fix numerous issues as you can find through out my code where I had to comment out code in varying states of completeness."fixing issues".
+
+I have currently added commented sections for my code showing my follow along,
+
+Devtools has made things a little easier to see some execution but im still learning basics and fixing everything via VS code. The I notice that my IDE shows me syntax issues a lot more in the past and unfortunately i dont know  what settings or extensions I changed so I am relying on dev tools to catch execution errors mainly because live server is much easier to access than actually running my code via terminal. 

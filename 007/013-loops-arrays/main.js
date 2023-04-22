@@ -133,17 +133,31 @@ document.querySelector('#replay').addEventListener('click', () => {
     // calculate success rate
     
     const rateSuccess = rateCount / count;
+    
 
     // Give success rate Array with For Loop.
-    for (i = 0; i = rateSuccessArray.length; i++) {
-        let rateCounting =  
-        return;
-    };
+    let i = 0;
     let appendDivElRate = "; Success Rates Array: ";
-    const success = rate.innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+    let appendSuccessArray = "; This is the Success Average via for Loop: ";
+    let addSuccesses = i + rateSuccessArray[1];
+    let rateCounting = addSuccesses / count;
+    for (i = 0; i < rateSuccessArray.length; i++) {
+        addSuccesses;
+        //return;
+    };
+    rateCounting;
+    const success = rate.innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
     success;
+});
 
-    /*
+//refresh Output div. All code is reset including the array.
+
+document.querySelector('#refresh').addEventListener('click', () => {
+    document.getElementById("output").innerHTML = "";
+})
+
+// unused code
+/*
 
     let i = rateSuccessArray.indexOf(count);
     console.log(i)
@@ -164,20 +178,7 @@ document.querySelector('#replay').addEventListener('click', () => {
         }
 
     });
-*/
-    /*
-    //rateSuccessArray;
-*/
-});
-
-//refresh Output div. All code is reset including the array.
-
-document.querySelector('#refresh').addEventListener('click', () => {
-    document.getElementById("output").innerHTML = "";
-})
-
-// unused code
-/*
+//rateSuccessArray;
 if (rateCount == count) {
             //win;
             rateSuccessArray.push(win);
