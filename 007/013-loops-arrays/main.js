@@ -5,7 +5,10 @@
 const kinglyAnswer = '"African or European?"';
 var count = 0;
 var rateCount = 0;
-
+const rateSuccessArray = [0];
+const win = 1;
+const lose = 0;
+    
 //console.log (document.getElementById('output'))
 const updateDOM = (kingsInquiry) => {
     if (kingsInquiry == "African or European?") {
@@ -14,7 +17,8 @@ const updateDOM = (kingsInquiry) => {
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
-        rateCount += 1;    
+        rateCount += 1;
+        rateSuccessArray.push(win);
         //console.log(rateCount);
         return;
     }
@@ -24,7 +28,8 @@ const updateDOM = (kingsInquiry) => {
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
-        rateCount += 1;    
+        rateCount += 1;
+        rateSuccessArray.push(win);
         //console.log(rateCount);
         return;
     }
@@ -35,6 +40,7 @@ const updateDOM = (kingsInquiry) => {
         divEl.appendChild(p);
         rateCount;
         rateCount += 1;
+        rateSuccessArray.push(win);
         return;
     }
     else if (kingsInquiry == "five") {
@@ -44,6 +50,7 @@ const updateDOM = (kingsInquiry) => {
         divEl.appendChild(p);
         rateCount;
         rateCount += 1;
+        rateSuccessArray.push(win);
         return;
     }
     else if (kingsInquiry == "Holy Hand Grenade of Antioch") {
@@ -52,7 +59,8 @@ const updateDOM = (kingsInquiry) => {
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
-        rateCount += 1;;
+        rateCount += 1;
+        rateSuccessArray.push(win);
         return;
     }
     else if (kingsInquiry == "I am Authur, King of the Britains.") {
@@ -62,6 +70,7 @@ const updateDOM = (kingsInquiry) => {
         divEl.appendChild(p);
         rateCount;
         rateCount += 1;
+        rateSuccessArray.push(win);
         return;
     }
     else if (kingsInquiry == "I am your King") {
@@ -71,6 +80,7 @@ const updateDOM = (kingsInquiry) => {
         divEl.appendChild(p);
         rateCount;
         rateCount += 1;
+        rateSuccessArray.push(win);
         return;
     }
     else {
@@ -80,6 +90,7 @@ const updateDOM = (kingsInquiry) => {
         divEl.appendChild(p);
         alert("THOU HAST FAILED THE KING!");
         rateCount;
+        rateSuccessArray.push(lose);
         return;
     }
 }
@@ -122,33 +133,41 @@ document.querySelector('#replay').addEventListener('click', () => {
     // calculate success rate
     
     const rateSuccess = rateCount / count;
-    let appendDivElRate = "; Success Rates Array: ";
-    const rateSuccessArray = [];
-    const success = rate.innerHTML = "Success: " + rateSuccess + appendDivElRate;
-    success;
-    document.getElementById("rate").append(rateSuccessArray);
-    console.log(rateSuccessArray);
 
     // Give success rate Array with For Loop.
-    const win = 1;
-    const lose = 0;
-    let i = rateSuccessArray.length;
-    for (i = 0; i <= count; i++) {
-        //console.log(updateDOM);
-            if (rateCount == count) {
-            //win;
+    for (i = 0; i = rateSuccessArray.length; i++) {
+        let rateCounting =  
+        return;
+    };
+    let appendDivElRate = "; Success Rates Array: ";
+    const success = rate.innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray;
+    success;
+
+    /*
+
+    let i = rateSuccessArray.indexOf(count);
+    console.log(i)
+    let gettingOutputAgain = document.getElementById(output).textContent;
+    console.log(gettingOutputAgain);
+
+    gettingOutputAgain.forEach(kinglyAnswer => {
+        if (kinglyAnswer = true) {
             rateSuccessArray.push(win);
-        }
-        else if (rateCount < count) {
-            //lose;
-            rateSuccessArray.push(lose);
+            console.log(rateSuccessArray);
+            document.getElementById('rate').append(rateSuccessArray);
         }
         else {
-            null;
-        }    
-    };
-    document.getElementById('rate').append(rateSuccessArray);
-    return;
+            //lose;
+            rateSuccessArray.push(lose);
+            console.log(rateSuccessArray);
+            document.getElementById('rate').append(rateSuccessArray);
+        }
+
+    });
+*/
+    /*
+    //rateSuccessArray;
+*/
 });
 
 //refresh Output div. All code is reset including the array.
@@ -159,7 +178,21 @@ document.querySelector('#refresh').addEventListener('click', () => {
 
 // unused code
 /*
-
+if (rateCount == count) {
+            //win;
+            rateSuccessArray.push(win);
+            console.log(rateSuccessArray);
+            document.getElementById('rate').append(rateSuccessArray);
+            //return rateSuccessArray;
+        }
+        else (!(rateCount == count)) {
+            //lose;
+            rateSuccessArray.push(lose);
+            console.log(rateSuccessArray);
+            document.getElementById('rate').append(rateSuccessArray);
+            //return rateSuccessArray;
+        }
+        //console.log(updateDOM);
 
         if (kingsInquiry.includes(kinglyAnswer)) {
             array.forEach(kingsInquiry.includes(kinglyAnswer) => {
