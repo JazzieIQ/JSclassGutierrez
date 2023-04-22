@@ -5,7 +5,7 @@
 const kinglyAnswer = '"African or European?"';
 var count = 0;
 var rateCount = 0;
-const rateSuccessArray = [0];
+const rateSuccessArray = [];
 const win = 1;
 const lose = 0;
     
@@ -132,21 +132,20 @@ document.querySelector('#replay').addEventListener('click', () => {
     
     // calculate success rate
     
-    const rateSuccess = rateCount / count;
+    const rateSuccess = (rateCount / count)*100;
     
 
     // Give success rate Array with For Loop.
     let i = 0;
+    let sumSuccesses = 0;
     let appendDivElRate = "; Success Rates Array: ";
-    let appendSuccessArray = "; This is the Success Average via for Loop: ";
-    let addSuccesses = i + rateSuccessArray[1];
-    let rateCounting = addSuccesses / count;
-    for (i = 0; i < rateSuccessArray.length; i++) {
-        addSuccesses;
-        //return;
+    let appendSuccessArray = "; This is the Your average via for Loop: ";
+        for (i = 0; i < rateSuccessArray.length; i++) {
+        sumSuccesses = sumSuccesses + rateSuccessArray[i];
     };
-    rateCounting;
-    const success = rate.innerHTML = "Success: " + rateSuccess + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
+    console.log(sumSuccesses)
+    let rateCounting = sumSuccesses / count;
+    const success = rate.innerHTML = "Success: " + rateSuccess + "%" + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
     success;
 });
 
