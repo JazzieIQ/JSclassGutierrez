@@ -193,12 +193,17 @@ document.querySelector('#replay').addEventListener('click', () => {
     
 
     // Give success rate Array with For Loop.
-
+    let i = 0
     let sumSuccesses = 0;
     let appendDivElRate = "; Success Rates Array: ";
     let appendSuccessArray = "; The scribe has thou averaged plainy: ";
+    /*
     for (let i = 0; i < rateSuccessArray.length; i++) {
         sumSuccesses = sumSuccesses + rateSuccessArray[i];
+    };
+    */
+    while (i <= rateSuccessArray.length) {sumSuccesses = sumSuccesses + rateSuccessArray[i];
+        return sumSuccesses;
     };
     let rateCounting = sumSuccesses / count;
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
