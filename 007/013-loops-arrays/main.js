@@ -10,7 +10,8 @@ const win = 1;
 const lose = 0;
 const winTxt = "Tally!";
 const loseTxt = "Oh Peril! the King's man hath lost his footing off the bridge of death!";
-    
+ 
+
 //updateDOM
 
 const updateDOM = (kingsInquiry) => {
@@ -58,7 +59,7 @@ const updateDOM = (kingsInquiry) => {
         console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "Holy Hand Grenade of Antioch") {
+    else if (kingsInquiry == "Holy Hand Grenade of Antioch.") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -170,21 +171,12 @@ const updateDOMArray = (kingsInquiry) => {
 
 document.querySelector('#replay').addEventListener('click', () => {
     buttonCount;
-    let swerian = () => {
-        document.getElementById("input");
-        if (input.style.display === "none") {
-            input.style.display = "block";
-        }
-        else {
-            input.style.display = 'none';
-        };
-    }
-    swerian();
-    let kingsInquiry = document.getElementById("input").Submit();
-    //    let kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
+    let swerian = document.getElementById("inputTxt").value;
+    console.log(swerian);
+    let kingsInquiry = swerian;
+    //let kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
     let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
-    kinglyAnswer;
     updateDOM(kingsInquiry);
 
     //div "output" split into array. Array increase with attempt.
@@ -212,6 +204,7 @@ document.querySelector('#replay').addEventListener('click', () => {
     let rateCounting = sumSuccesses / count;
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
     success;
+    //input.style.display = 'none';
 });
 
 //refresh Output div. All code is reset including the array.
