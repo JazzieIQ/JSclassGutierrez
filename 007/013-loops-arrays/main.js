@@ -173,7 +173,7 @@ document.querySelector('#replay').addEventListener('click', () => {
     buttonCount;
     let swerian = document.getElementById("inputTxt").value;
     console.log(swerian);
-    let kingsInquiry = toLowerCase(swerian);
+    let kingsInquiry = swerian.toLowerCase();
     let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
     updateDOM(kingsInquiry);

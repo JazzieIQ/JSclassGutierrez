@@ -14,7 +14,10 @@ h2,
 form {
     color: blue;
 }
-
+#inputTxt {
+    margin: 25px;
+    display: inline-block;
+}
 #refresh,
 #replay {
     font-size: 1rem;
@@ -23,16 +26,16 @@ form {
     text-decoration: wavy;
     background-color: gold;
 }
-
 #replay {
     padding: 15px;
     padding-left: 20px;
-    padding-right: 30px;
+    padding-right: 40px;
     align-content: center;
-    margin: 50px;
-    margin-left: 75px;
+    display: inline-block;
 }
-
+#refresh {
+    padding: 8px;
+    font-size: 1.05rem;}
 #replay:hover,
 #refresh:hover {
     color: blue;
