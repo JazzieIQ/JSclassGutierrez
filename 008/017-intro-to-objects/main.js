@@ -7,12 +7,16 @@ const myObj = {
         brand: 'Quickie'
     },
     myGreeting: function (person) {
-        console.log(this)
-        return '$(this.name) who loves to code $(this.hobbies) O...M...G...Hola Mundo $(person)'
+        let i = 0
+        console.log(myObj.hobbies.length)
+        while (i < myObj.hobbies.length) {
+            console.log('$(this.name) has $(this.hobbies)')
+        };
+        system.out.println('$(this.name) who loves $(this.hobbies) says "O...M...G...Hola Mundo $(person)"')
     }
 }
 const greeting = myObj.myGreeting('Matthew')
-console.log(greeting)
+greeting;
 const myArr = []
 const myNumber = 1
 
