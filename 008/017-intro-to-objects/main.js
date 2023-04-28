@@ -8,7 +8,7 @@ const myObj = {
     },
     myGreeting: function (person) {
         let i = 0
-        console.log(myObj.hobbies.length)
+        //console.log(myObj.hobbies.length)
         while (i < myObj.hobbies.length) {
             console.log('$(this.name) has $(this.hobbies)')
         };
@@ -17,6 +17,7 @@ const myObj = {
 }
 const greeting = myObj.myGreeting('Matthew')
 greeting;
+
 const myArr = []
 const myNumber = 1
 
