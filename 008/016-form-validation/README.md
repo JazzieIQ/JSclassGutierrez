@@ -1,3 +1,5 @@
 # Week 8-016
 
 Yes I am able to uese boolean to help validate user input. My text based user input is all passed through a boolean for a win/lose scenario.
+
+i believe my code meets the parameters of the assingment. I have user input passing to validation via an if-else statement. And several alert messages for in correct input. My code takes user input and averages correct answer twice once through a simple percentage and is rounded but also each win and loss is passed to an array with either a 0 or 1 for each attempted added via .push to the array and is then averaged on a decimal scale between 0 and 1 showing a non rounded success rate. lastly I have a div HTML that is appended with either a win or lose message and input can be erased on the uder end without refreshing and user varage will still tally.
