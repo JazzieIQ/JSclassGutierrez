@@ -10,11 +10,12 @@ const win = 1;
 const lose = 0;
 const winTxt = "Tally!";
 const loseTxt = "Oh Peril! the King's man hath lost his footing off the bridge of death!";
+const userTxt = document.getElementById("inputTxt");
  
 //updateDOM
 
 const updateDOM = (kingsInquiry) => {
-    if (kingsInquiry == "african or european" || "i am king i'm supposed to know these things" || "a kingly answer" || "five" || "holy hand grenade of antioch" || "ni" || "I am authur, king of the britains" ||"i am your king" || "you don't vote for kings" || "be quiet!" || "now, stand aside worthy adversary!" || "on second thought, let's not go to camelot. 'tis a silly place") {
+    if (kingsInquiry == "african or european" || kingsInquiry ==  "i am king i'm supposed to know these things" || kingsInquiry == "a kingly answer" || kingsInquiry ==  "five" || kingsInquiry ==  "holy hand grenade of antioch" || kingsInquiry == "ni" || kingsInquiry == "I am authur, king of the britains" ||kingsInquiry == "i am your king" || kingsInquiry == "you don't vote for kings" || kingsInquiry == "be quiet!" || kingsInquiry == "now, stand aside worthy adversary!" || kingsInquiry == "on second thought, let's not go to camelot. 'tis a silly place") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -92,10 +93,12 @@ document.querySelector('#replay').addEventListener('click', () => {
     let rateCounting = sumSuccesses / count;
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
     success;
+    ;
 });
 
 //refresh Output div. All code is reset including the array.
 
 document.querySelector('#refresh').addEventListener('click', () => {
     document.getElementById("output").innerHTML = "";
-});
+    document.getElementById("input").reset()
+    });
