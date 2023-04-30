@@ -62,7 +62,7 @@ const updateDOMArray = (kingsInquiry) => {
 document.querySelector('#replay').addEventListener('click', () => {
     buttonCount;
     let swerian = document.getElementById("inputTxt").value;
-    let kingsInquiry = swerian.toLowerCase();
+    let kingsInquiry = swerian.toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
     let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
     updateDOM(kingsInquiry);
