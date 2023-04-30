@@ -21,7 +21,13 @@ greeting;
 const myArr = []
 const myNumber = 1
 
+// I played around with thee methods.
+
 console.log(typeof myObj)
 console.log(typeof myArr)
 console.log(myArr === myObj)
 console.log(myObj.mobile.make.length)
+
+for (key in myobj) {
+    console.log('key $(key) and value ${myObj[key]}')
+}
