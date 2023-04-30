@@ -24,3 +24,4 @@ const myNumber = 1
 console.log(typeof myObj)
 console.log(typeof myArr)
 console.log(myArr === myObj)
+console.log(myObj.mobile.make.length)
