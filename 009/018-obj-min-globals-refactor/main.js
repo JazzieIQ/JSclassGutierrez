@@ -1,104 +1,92 @@
-// A Bridge Too Far: The Kings Inquiry HTML/Text Based Game.
 
-// Key phrasing
+/* Global const for updating DOM elements by their id*/
 
-const kinglyAnswer = '"African or European?"';
-let count = 0;
-let rateCount = 0;
-const rateSuccessArray = [];
-const win = 1;
-const lose = 0;
-const winTxt = "Tally!";
-const loseTxt = "Oh Peril! the King's man hath lost his footing off the bridge of death!";
-const userTxt = document.getElementById("inputTxt");
- 
-//updateDOM
+const FORM = document.getElementById('form-input')
+const ERR = document.getElementById('err')
+const AVG_OUTPUT = document.getElementById('output-avg')
 
-const updateDOM = (kingsInquiry) => {
-    if (kingsInquiry == "african or european" || kingsInquiry ==  "i am king i'm supposed to know these things" || kingsInquiry == "a kingly answer" || kingsInquiry ==  "five" || kingsInquiry ==  "holy hand grenade of antioch" || kingsInquiry == "ni" || kingsInquiry == "I am authur, king of the britains" ||kingsInquiry == "i am your king" || kingsInquiry == "you don't vote for kings" || kingsInquiry == "be quiet!" || kingsInquiry == "now, stand aside worthy adversary!" || kingsInquiry == "on second thought, let's not go to camelot. 'tis a silly place") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The hour is past and thou art DOOMED!!!!!"
-        divEl.appendChild(p);
-        alert("Thou has been cast into the Gorge of Eternal Peril!");
-        rateCount;
-        rateSuccessArray.push(lose);
-        console.log(loseTxt);
-        return;
+/* MY_DATA is global array that will be updated by the user input with objects from form input values 
+and calculate data */
+
+const MY_DATA = []
+
+/* updateDOM function takes in input (string value) and id (to determine DOM location to update) 
+and creates and updates DOM elements*/
+
+const updateDOM = (input, id) => {
+    const divEl = document.querySelector(id)
+    const p = document.createElement('p')
+    p.textContent = input
+    divEl.appendChild(p)
+}
+
+/* trackMPGandCost function takes in miles, gallons and price and calculates MPG and tripCost and 
+returns an object */
+
+const trackMPGandCost = (miles, gallons, price) => {
+    const MPG  = Math.round(miles/gallons)
+    const tripCost = Math.round(gallons * price)
+    updateDOM(`Miles per gallon  is ${MPG} and trip cost is ${tripCost}`, '#output')
+    return {
+        MPG: MPG, 
+        tripCost: tripCost,
+        miles: miles,
+        gallons: gallons,
+        price: price
     }
 }
 
-let buttonCount = document.getElementById("replay")
-replay.onclick = function () {
-    count;
-    count += 1;
-    replay.innerHTML = "Attempt: " + count;
-    return count;
-};
+/* calculateAvg function loops over the MY_DATA to determine average MPG and Trip Cost
+*/
 
-//update the DOM
+const calculateAvg = () => {
+    const numberOfObj = MY_DATA.length
+    let sumMPG  = 0
+    let sumTripCost = 0  
+    MY_DATA.forEach(obj => {
+        sumMPG += obj.MPG
+        sumTripCost += obj.tripCost
+    })
+    const avgMPG = Math.round(sumMPG/numberOfObj)
+    const avgTripCost = Math.round(sumTripCost/numberOfObj)
+    updateDOM(`Average MPG is ${avgMPG}`, '#output-avg')
+    updateDOM(`Average Trip Cost is ${avgTripCost}`, '#output-avg')
+}
 
-const updateDOMArray = (kingsInquiry) => {
-        let divEl = document.querySelector('#array')
-        let a = document.createElement('a')
-        a.textContent = '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
-        divEl.appendChild(a);
-        return;
-        }
+/* isFormValid takes in miles, gallons and price and does simple validation and 
+returns boolean or truthy value back to eventlisteners */
 
-// Play the game/ attemp again
-
-document.querySelector('#replay').addEventListener('click', () => {
-    buttonCount;
-    let swerian = document.getElementById("inputTxt").value;
-    let kingsInquiry = swerian.toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
-    let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
-    scribe;
-    updateDOM(kingsInquiry);
-
-    //div "output" split into array. Array increase with attempt.
-
-    updateDOMArray(kingsInquiry);
-    const kingsRecord = (document.getElementById("array")).textContent.split('; ');
-    const noNullKingsArray = kingsRecord.filter(element => element !== '');
-    console.log(noNullKingsArray);
-    noNullKingsArray.push('I told you that you were doomed! Oh but nobody listens to me!');
-    
-    // calculate success rate
-    
-    const rateSuccess = (rateCount / count) * 100;
-    const ratePercent = Math.round(rateSuccess) + "%";
-    
-    // Give success rate Array with For Loop.
-
-    let i = 0
-    let sumSuccesses = 0;
-    let appendDivElRate = "; Success Rates Array: ";
-    let appendSuccessArray = "; The scribe has thou averaged plainy: ";
-    while (i < rateSuccessArray.length) {
-        sumSuccesses = sumSuccesses + rateSuccessArray[i];
-        i++
+const isFormValid = (miles, gallons, price) => {
+    const errMsg = []
+    if (miles === 0 || gallons === 0 || price === 0) {
+        errMsg.push('Make sure your input value greater than 0!!, Try Again')
     }
-    let rateCounting = sumSuccesses / count;
-    const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
-    success;
-    ;
-});
+    if (price > 1000) {
+        errMsg.push('Really!!!?? I think this is in error...Try again')
+    }
+    if (errMsg.length > 0) {
+        ERR.textContent = errMsg
+        return false
+    } else {
+        return true
+    }
+}
 
-//refresh Output div. All code is reset including the array.
+/* Eventlisteners for form submit button, checks validation and if valid saves input data and calculated 
+data as an object into global array named MY_DATA */
 
-document.querySelector('#refresh').addEventListener('click', () => {
-    document.getElementById("output").innerHTML = "";
-    document.getElementById("input").reset()
-    });
+FORM.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const miles = parseInt(e.target.miles.value)
+    const gallons = parseInt(e.target.gallons.value)
+    const price = parseInt(e.target.price.value)
+    const isValid = isFormValid(miles, gallons, price)
+    if(isValid) {
+        ERR.textContent = ''
+        AVG_OUTPUT.textContent = ''
+        const dataObj = trackMPGandCost(miles, gallons, price)
+        MY_DATA.push(dataObj)
+        calculateAvg()
+    }
+    FORM.reset()  
+})
