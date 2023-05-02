@@ -1,4 +1,3 @@
-
 /* Global const for updating DOM elements by their id*/
 
 const FORM = document.getElementById('form-input')
