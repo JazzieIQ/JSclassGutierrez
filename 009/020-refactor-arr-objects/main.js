@@ -23,9 +23,17 @@ const updateDOM = (input, id) => {
 returns an object */
 
 const trackMPGandCost = (miles, gallons, price) => {
-    const MPG  = Math.round(miles/gallons)
+    const MPG = Math.round(miles / gallons)
     const tripCost = Math.round(gallons * price)
     updateDOM(`Miles per gallon  is ${MPG} and trip cost is ${tripCost}`, '#output')
+    let objAveragesArr = {
+        MPG: MPG,
+        tripCost: tripCost,
+        miles: miles,
+        gallons: gallons,
+        price: price
+}
+    console.log(objAveragesArr);
     return {
         MPG: MPG, 
         tripCost: tripCost,
