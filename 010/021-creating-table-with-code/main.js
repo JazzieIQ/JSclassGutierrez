@@ -138,7 +138,7 @@ FORM.addEventListener('submit', (e) => {
         AVG_OUTPUT.textContent = ''
         const dataObj = trackMPGandCost(miles, gallons, price)
         MY_DATA.push(dataObj)
-        //renderTable()
+        renderTable()
         calculateAvg()
     }
     FORM.reset()  
