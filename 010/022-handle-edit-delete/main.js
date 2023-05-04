@@ -97,8 +97,11 @@ function renderEditDelBtn (index) {
     const td = document.createElement('td')
     const editBtn = document.createElement('button')
     editBtn.textContent = 'edit'
-    editBtn.addEventListener('click', function (e) {
-        console.log(index)
+   editBtn.addEventListener('click', function(e){
+        FORM[0].value = MY_DATA[index].miles
+        FORM[1].value = MY_DATA[index].gallons
+        FORM[2].value = MY_DATA[index].price
+        MY_DATA.splice(index, 1)
     })
     const delBtn = document.createElement('button')
     delBtn.textContent = 'delete'
@@ -116,17 +119,17 @@ function renderTable() {
     TBL_OUTPUT.innerHTML = ''
     const tbl = renderTableHeadings()
     TBL_OUTPUT.appendChild(tbl)
-    MY_DATA.forEach(function(obj, index){
-        const tr = document.createElement('tr')
-        for(key in obj){
-            let td = document.createElement('td')
-            td.textContent = obj[key]
-            tr.appendChild(td)
-        }
-        const btnTD = renderEditDelBtn(index)
-        tr.appendChild(btnTD)
-        tbl.appendChild(tr)
-    })
+    MY_DATA.forEach(function (obj, index) {
+            const tr = document.createElement('tr');
+            for (key in obj) {
+                let td = document.createElement('td');
+                td.textContent = obj[key];
+                tr.appendChild(td);
+            }
+            const btnTD = renderEditDelBtn(index);
+            tr.appendChild(btnTD);
+            tbl.appendChild(tr);
+        });
     
 }
 
