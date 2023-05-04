@@ -105,8 +105,9 @@ function renderEditDelBtn (index) {
     })
     const delBtn = document.createElement('button')
     delBtn.textContent = 'delete'
-    delBtn.addEventListener('click', function (e) {
-        console.log(e.target)
+    delBtn.addEventListener('click', function(e){
+        MY_DATA.splice(index, 1)
+        renderTable()
     })
     td.appendChild(editBtn)
     td.appendChild(delBtn)
