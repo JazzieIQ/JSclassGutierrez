@@ -13,7 +13,7 @@ function getTripData() {
     return JSON.parse(tripDataJSON)
 }
 
-const MY_DATA = getTripData()
+const MY_DATA = getTripData() || []
 
 /* updateDOM function takes in input (string value) and id (to determine DOM location to update) 
 and creates and updates DOM elements*/
@@ -137,6 +137,7 @@ FORM.addEventListener('submit', (e) => {
         ERR.textContent = ''
         AVG_OUTPUT.textContent = ''
         const dataObj = trackMPGandCost(miles, gallons, price)
+        localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
         MY_DATA.push(dataObj)
         renderTable()
         calculateAvg()
