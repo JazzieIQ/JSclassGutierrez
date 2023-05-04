@@ -1,10 +1,1 @@
-Answer:
-A new div section can be created and then the table can be appended to the div section with the table elements we returned via out for table object.
-
-I would add a new append for a tr which we can return and append those rows under the headers with data from the my-data object array.
-
-I don't have a solution yet.
-
-this is a product of a for-loop which generates a new table for each new item being pulled from our object caused by the conditons being passed. In my previous deviated code I ran into this problem when I was creating an array using a FOR.EACH where my conditions were to create a new array for each index of my array rather to either push, append, and existing array. My solution was to replace a for-each loop with a while loop and to reduce the while to one operation processing a number for each new index length where the index number had already passed through an i++ in previous operation.
-
-During my code along i noticed a pice of missing code I had to make adjustments for namely that in devtools my code didn't have local data stored for the my data object which caused an exception error. I adjusted the code to initialize a local store of pull from local storage if it exists. In the code for creating the table via the rendertableheadings functions I was suprised to see that we simply created an array of substrings as table headings. I might have thought it would be better to split an array of objects from existing code variables or strings to send to the headers array. I had been familiar with regex expression to a target character set and tostring or substring so it is good that I know how to create an array of strings form initialization via an array of objects now. The only portion of code that does concern me is the for.each loop as i have not been able to a working for.each loop to any of my code thus far.
+I had no solutions and needed to wait for code along solutions to see what I could do.
