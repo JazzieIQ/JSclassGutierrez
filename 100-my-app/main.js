@@ -1,57 +1,63 @@
 // global variables
 
 const hoursForActivity = 12;
-const wholeDay = "You still have " + hoursForActivity + "house left in your day";
-let input = document.getElementById("inputTxt");
+const wholeDay = "You still have " + hoursForActivity + "hours left in your day";
+let userInput = document.getElementById("inputTxt");
 const validation = [];
 let checkBoxed = [];
-let clear = input.innerText = '';
+let clear = document.getElementById("input").reset();
 
 // functions
 
-const checked = document.querySelectorAll('[type="checkbox"]').forEach(item => {
-    if (item.checked === true) {
-        taskTime = parseInt(item.value);
-        checkBoxed.push(item.value);
-        for (let i = 0; i < checkBoxed.length; i++) {
-            const time = checkBoxed[i];
-            hoursForActivity -= time;
-        }
-    } else {
-        wholeDay;
-    }
-});
+function checked() {
+    document.querySelectorAll('[type="checkbox"]').forEach(item => {
+        console.log(item.checked)
+        /*
+            if (item.checked === true) {
+                let taskTime = parseInt(item.value);
+                checkBoxed.push(taskTime);
+                for (let i = 0; i < checkBoxed.length; i++) {
+                    let time = checkBoxed[i];
+                    let hoursRemaining = hoursForActivity - time;
+                    hoursRemaining
+                }
+            } else {
+                checkBoxed.push(wholeDay);
+            }
+        */
+        })
+        //console.log(hoursForActivity)
+};
 
-function updateDOM (input, checked) {
+function updateDOM (userInput, checked) {
     let divOutput = document.querySelector('#output')
     let p = document.createElement('p')
-    checked;
-    p.textContent = "Thanks user here is your greeting: " + "\n\n" + ' "' + input + '"' + ". And my morning routine leaves me:" + checked + " hours.";
+    p.textContent = "Thanks user here is your greeting: " + ' "' + userInput + '"' + ". And my morning routine leaves you:" + checked + " hours.";
     divOutput.appendChild(p);
     return;
 };
 
-function validate(input) {
-    if (input == '' || input == null || input == undefined) {
+function validate(userInput) {
+    if (userInput == '' || userInput == null || userInput == undefined) {
         validation.push("please enter something");
         updateDOM(validation, checked)
     }
-    else if (input.includes == [0-9]) {
+    else if (userInput.includes == [0-9]) {
         validation.push("nice try, but please a word or phrase");
         updateDOM(validation, checked)
     }
     else {
-        updateDOM(input.value, checked)
+        updateDOM(userInput, checked)
     }
 }
 
 // submitting the form
 document.getElementById('replay').addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(input.includes == [0 - 9]);
-    //checked;
-    validate(input);
-    console.log(input.value)
+    console.log(userInput.includes == [0 - 9]);
+    validate(userInput.value);
+    //console.log(checked.value);
+    console.log(userInput.value)
     console.log(checkBoxed)
     clear;
     })
