@@ -1,27 +1,10 @@
-import { renderTable} from "./render.js";
+import { renderTable } from "./render.js";
+import { saveTripData, getTripData } from "./storage.js";
 /* Global const for updating DOM elements by their id*/
 
 const FORM = document.getElementById('form-input')
 const ERR = document.getElementById('err')
 const AVG_OUTPUT = document.getElementById('output-avg')
-
-
-/* MY_DATA is global array that will be updated by the user input with objects from form input values 
-and calculate data */
-
-function getTripData() {
-    const tripDataJSON = localStorage.getItem('tripdata')
-    if (tripDataJSON !== null) {
-        return JSON.parse(tripDataJSON)
-    }
-    else {
-        return []
-    }
-}
-
-function saveTripData() {
-    localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
-}
 
 const MY_DATA = getTripData() || []
 renderTable(MY_DATA)
@@ -103,7 +86,7 @@ FORM.addEventListener('submit', (e) => {
         const dataObj = trackMPGandCost(miles, gallons, price)
         localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
         MY_DATA.push(dataObj) || [dataObj]
-        saveTripData()
+        saveTripData(MY_DATA)
         renderTable(MY_DATA, FORM);
         calculateAvg();
     }
