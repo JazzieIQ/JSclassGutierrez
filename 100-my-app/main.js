@@ -41,7 +41,7 @@ function timeParse(hoursRemaining) {
         hoursRemaining;
         return hoursRemaining;
     }
-    console.log(hoursRemaining);
+
     return hoursRemaining;
     };
 
@@ -75,6 +75,7 @@ document.getElementById('replay').addEventListener('click', (e) => {
     unCheckBoxed.length = 0;
     validation.length = 0;
     document.getElementById('output').innerHTML = '';
+    console.log(hoursRemaining);
     //console.log(userInput.includes == [0 - 9]);
     console.log(userInput.value);
     validate(userInput.value);
