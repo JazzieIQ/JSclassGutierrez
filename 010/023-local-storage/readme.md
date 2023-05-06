@@ -1,0 +1,1 @@
+JSON appears to be a counterpart to XML or perhaps a simpler way of storing data for webbased retrieval. It can house four main types of data by the syntax "name:" and then the data value whether an "array", "number", "object", or "string". It does so via "{}". It ultimately is easy to read and parse for both humans and computers.
