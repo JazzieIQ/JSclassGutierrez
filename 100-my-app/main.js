@@ -1,12 +1,13 @@
 // global variables
 
-const hoursForActivity = 12;
+let hoursForActivity = parseFloat(12);
 const wholeDay = "You still have " + hoursForActivity + "hours left in your day";
 let userInput = document.getElementById("inputTxt");
 const validation = [];
 let checkBoxed = [];
 let unCheckBoxed = [];
-let clear = document.getElementById("input").reset();
+let hoursRemaining;
+
 
 // functions
 
@@ -15,44 +16,53 @@ function checked() {
         //checkBoxed.push(item.checked)
         if (item.checked === true) {
             let taskTime = parseFloat(item.value);
-            console.log(taskTime);
+            //console.log(taskTime);
             checkBoxed.push(taskTime);
             return;    
         }
         else {
             let freeTime = item.name;
-            console.log(freeTime);
+            //console.log(freeTime);
             unCheckBoxed.push(freeTime);
+            return;
         }
     })
-    for (let i = 0; i < checkBoxed.length; i++) {
-        let time = checkBoxed[i];
-        let hoursRemaining = hoursForActivity - time;
-        hoursRemaining;
-    }
-    //console.log(checkBoxed)
-        //console.log(hoursForActivity)
+    console.log(checkBoxed);
+    console.log(unCheckBoxed);
 };
 
-function updateDOM (userInput, checkBoxed) {
+function timeParse(hoursRemaining) {
+    for (let i = 0; i < checkBoxed.length; i++) {
+        console.log(typeof checkBoxed[i])
+        //console.log(checkBoxed[i])
+        let time = parseFloat(checkBoxed[i]);
+        //console.log(time);
+        hoursRemaining = parseFloat(hoursForActivity) - time;
+        hoursRemaining;
+    }
+    console.log(hoursRemaining);    
+    };
+
+function updateDOM(userInput, hoursRemaining) {
+    checked();
     let divOutput = document.querySelector('#output')
     let p = document.createElement('p')
-    p.textContent = "Thanks user here is your greeting: " + ' "' + userInput + '"' + ". And your morning routine is:" + checkBoxed + "hour(s). Please consider doing the following to fill in your day: " + unCheckBoxed;
+    p.textContent = "Thanks user here is your greeting: " + ' "' + userInput + '"' + ". And your morning routine leaves you with:" + timeParse(hoursRemaining) + "hour(s). Please consider doing the following to fill in your day: " + unCheckBoxed;
     divOutput.appendChild(p);
     return;
 };
 
 function validate(userInput) {
     if (userInput == '' || userInput == null || userInput == undefined) {
-        validation.push("please enter something");
-        updateDOM(validation, checkBoxed)
+        validation.push("[User did not input anything!]");
+        updateDOM(validation, hoursRemaining)
     }
     else if (userInput.includes == [0-9]) {
         validation.push("nice try, but please a word or phrase");
-        updateDOM(validation, checkBoxed)
+        updateDOM(validation, hoursRemaining)
     }
     else {
-        updateDOM(userInput, checkBoxed)
+        updateDOM(userInput, hoursRemaining)
     }
 }
 
@@ -60,9 +70,10 @@ function validate(userInput) {
 
 document.getElementById('replay').addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(userInput.includes == [0 - 9]);
-    checked();
+    unCheckBoxed.length = 0;
+    validation.length = 0;
+    document.getElementById('output').innerHTML = '';
+    //console.log(userInput.includes == [0 - 9]);
+    console.log(userInput.value);
     validate(userInput.value);
-    console.log(userInput.value)
-    clear;
     })
