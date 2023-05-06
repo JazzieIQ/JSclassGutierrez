@@ -10,10 +10,20 @@ and calculate data */
 
 function getTripData() {
     const tripDataJSON = localStorage.getItem('tripdata')
-    return JSON.parse(tripDataJSON)
+    if (tripDataJSON !== null) {
+        return JSON.parse(tripDataJSON)
+    }
+    else {
+        return []
+    }
+}
+
+function saveTripData() {
+    localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
 }
 
 const MY_DATA = getTripData() || []
+renderTable()
 
 /* updateDOM function takes in input (string value) and id (to determine DOM location to update) 
 and creates and updates DOM elements*/
@@ -93,25 +103,27 @@ function renderTableHeadings () {
 
 /* renderEditDelBtn the DOM creation of the buttons for handling edit and delete functionality in the table */
 
-function renderEditDelBtn (index) {
-    const td = document.createElement('td')
-    const editBtn = document.createElement('button')
-    editBtn.textContent = 'edit'
-   editBtn.addEventListener('click', function(e){
+function renderEditDelBtn(index) {
+    const td = document.createElement('td');
+    const editBtn = document.createElement('button');
+    editBtn.textContent = 'edit';
+    const delBtn = document.createElement('button');
+    delBtn.textContent = 'delete';
+    editBtn.addEventListener('click', function(e){
         FORM[0].value = MY_DATA[index].miles
         FORM[1].value = MY_DATA[index].gallons
         FORM[2].value = MY_DATA[index].price
         MY_DATA.splice(index, 1)
     })
-    const delBtn = document.createElement('button')
-    delBtn.textContent = 'delete'
     delBtn.addEventListener('click', function(e){
         MY_DATA.splice(index, 1)
+        saveTripData()
         renderTable()
     })
-    td.appendChild(editBtn)
-    td.appendChild(delBtn)
-    return td
+    
+    td.appendChild(editBtn);
+    td.appendChild(delBtn);
+    return td;
 }
 
 /* renderTable hands the render the DOM for the array of object (MY_DATA)  */
@@ -143,14 +155,15 @@ FORM.addEventListener('submit', (e) => {
     const gallons = parseInt(e.target.gallons.value)
     const price = parseInt(e.target.price.value)
     const isValid = isFormValid(miles, gallons, price)
-    if(isValid) {
+    if (isValid) {
         ERR.textContent = ''
         AVG_OUTPUT.textContent = ''
         const dataObj = trackMPGandCost(miles, gallons, price)
         localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
         MY_DATA.push(dataObj) || [dataObj]
-        renderTable()
-        calculateAvg()
+        saveTripData()
+        renderTable();
+        calculateAvg();
     }
-    FORM.reset()  
-})
+    FORM.reset()
+});
