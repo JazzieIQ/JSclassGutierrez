@@ -39,8 +39,10 @@ function timeParse(hoursRemaining) {
         //console.log(time);
         hoursRemaining = parseFloat(hoursForActivity) - time;
         hoursRemaining;
+        return hoursRemaining;
     }
-    console.log(hoursRemaining);    
+    console.log(hoursRemaining);
+    return hoursRemaining;
     };
 
 function updateDOM(userInput, hoursRemaining) {
