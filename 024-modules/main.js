@@ -1,12 +1,12 @@
 import { renderTable } from "./render.js";
 import { saveTripData, getTripData } from "./storage.js";
 import {isFormValid, calculateAvg, trackMPGandCost} from "./updateDOM.js";
+
 /* Global const for updating DOM elements by their id*/
 
 const FORM = document.getElementById('form-input')
 const ERR = document.getElementById('err')
 const AVG_OUTPUT = document.getElementById('output-avg')
-
 const MY_DATA = getTripData() || []
 renderTable(MY_DATA)
 

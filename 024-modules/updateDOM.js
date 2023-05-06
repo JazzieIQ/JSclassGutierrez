@@ -1,3 +1,4 @@
+const ERR = document.getElementById('err')
 /* updateDOM function takes in input (string value) and id (to determine DOM location to update) 
 and creates and updates DOM elements*/
 
