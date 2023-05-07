@@ -1,4 +1,4 @@
-import { renderTable } from "./render.js";
+import { renderTable, preventEdDelBtn } from "./render.js";
 import { saveTripData, getTripData } from "./storage.js";
 import {isFormValid, calculateAvg, trackMPGandCost} from "./updateDOM.js";
 
@@ -21,6 +21,7 @@ FORM.addEventListener('submit', (e) => {
     const gallons = parseFloat(e.target.gallons.value)
     const price = parseFloat(e.target.price.value)
     const isValid = isFormValid(miles, gallons, price)
+    //preventEdDelBtn()
     if (isValid) {
         ERR.textContent = ''
         AVG_OUTPUT.textContent = ''
@@ -30,6 +31,7 @@ FORM.addEventListener('submit', (e) => {
         saveTripData(MY_DATA)
         renderTable(MY_DATA, FORM);
         calculateAvg(MY_DATA);
+
     }
     FORM.reset()
 });

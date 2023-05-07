@@ -60,4 +60,4 @@ function isFormValid (miles, gallons, price) {
     }
 }
 
-export {isFormValid, calculateAvg, trackMPGandCost}
+export {isFormValid, calculateAvg, trackMPGandCost,}

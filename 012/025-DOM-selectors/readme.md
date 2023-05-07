@@ -1,2 +1,3 @@
 here my sense of the issues. Int numbers are whole positive numbers so we need to change parseInt to parseFloat. Also math.round appears to be defaulted at whole numbers meaning when they sent to local storage they are saved as whole numbers and the full original value is not passed to local storage. I solved the issue with not allowing decimals by removing all instances of rounding. So now my averages also show floating numbers.
 
+I attempted to create a function for creating the classlist and assumed I would add in main,js event listener. I tried that and deleted as it didnt work.
