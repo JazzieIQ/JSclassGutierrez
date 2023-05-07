@@ -1,4 +1,2 @@
-JSON appears to be a counterpart to XML or perhaps a simpler way of storing data for webbased retrieval. It can house four main types of data by the syntax "name:" and then the data value whether an "array", "number", "object", or "string". It does so via "{}". It ultimately is easy to read and parse for both humans and computers.
-
-I understand that local storage is being given or overwriting a persistent set of data that we inputting via the mialeage program and now setting to JSON. Any program we change is from a volatile set data that has either been pulled from json or inputted by the user.
+here my sense of the issues. Int numbers are whole positive numbers so we need to change parseInt to parseFloat. Also math.round appears to be defaulted at whole numbers meaning when they sent to local storage they are saved as whole numbers and the full original value is not passed to local storage. I solved the issue with not allowing decimals by removing all instances of rounding. So now my averages also show floating numbers.
 
