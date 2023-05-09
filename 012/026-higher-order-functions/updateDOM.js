@@ -28,26 +28,20 @@ function trackMPGandCost (miles, gallons, price) {
 /* calculateAvg function loops over the MY_DATA to determine average MPG and Trip Cost
 */
 
-function calculateAvg (MY_DATA) {
-    const numberOfObj = MY_DATA.length
-    /*
-    let sumMPG = 0
-    let sumTripCost = 0  
-    MY_DATA.forEach(function (obj, index) {
-        sumMPG += obj.MPG
-        sumTripCost += obj.tripCost
-    })
-    */
-    const sums = MY_DATA.reduce(function (sum, obj) {
+function calculateAvg(MY_DATA) {
+    //AVG_OUTPUT.innerHTML= ''
+    const numberOfObj = MY_DATA.length;
+    const sums = MY_DATA.reduce(function(sum, obj){
         return {
             MPG: sum.MPG + obj.MPG,
-            tripCost: sum.TripCost + obj.tripCost
+            tripCost: sum.tripCost + obj.tripCost
         }
-    }, 0)
-    const avgMPG = sums.MPG/numberOfObj
-    const avgTripCost = sums.tripCost/numberOfObj
-    updateDOM(`Average MPG is ${avgMPG}`, '#output-avg')
-    updateDOM(`Average Trip Cost is ${avgTripCost}`, '#output-avg')
+    })
+    console.log(sums.MPG + ", " +  sums.tripCost + ', ' + numberOfObj);
+    const avgMPG = Number((sums.MPG / numberOfObj).toFixed(2));
+    const avgTripCost = Number((sums.tripCost / numberOfObj).toFixed(2));
+    updateDOM(`Average MPG is ${avgMPG}`, '#output-avg');
+    updateDOM(`Average Trip Cost is ${avgTripCost}`, '#output-avg');
 }
 
 /* isFormValid takes in miles, gallons and price and does simple validation and 
