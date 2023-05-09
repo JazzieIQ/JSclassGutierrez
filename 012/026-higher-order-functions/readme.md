@@ -3,3 +3,5 @@ here my sense of the issues. Int numbers are whole positive numbers so we need t
 no fixed code commit as I believe i targetted the issue and solved.
 
 I attempted to create a function for creating the classlist and assumed I would add in main,js event listener. I tried that and deleted as it didnt work.
+
+Attempted a fix and ran into some of other reference such as AVG-ouput issue that i commented out. So i played the solution video. I was getting NaN for my sums object reference so I added a consoled to check which line the issues was coming from. It turned out for some reason sometimes i've noticed that in vs code and live server the code appears to be typed correctly it doesnt always fetch or pass through the code or it doesn't always pull right for lack of a better way to say it. I literally cut and re-pasted the same code I attempted and the code worked and fetched the data after all.
