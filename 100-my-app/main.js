@@ -1,6 +1,9 @@
 // global variables
 //const wholeDay = "You still have " + hoursForActivity + "hours left in your day";
-const hoursForActivity = parseFloat(12);
+const keyPhrasing = {
+    
+}
+let hoursForActivity = parseFloat(12);
 let userInput = document.getElementById("inputTxt");
 const ERR = document.getElementById('err');
 const validation = [];
@@ -50,7 +53,7 @@ function timeParse(hoursForActivity) {
         hoursForActivity = parseFloat(hoursForActivity) - time;
         console.log(hoursForActivity);
         i++;
-        hoursForActivity;
+        //hoursForActivity;
     }
     return hoursForActivity;
     };
@@ -58,10 +61,13 @@ function timeParse(hoursForActivity) {
 
 function updateDOM(userInput) {
     checked();
+    timeParse(hoursForActivity);
+    hoursForActivity;
     let divOutput = document.querySelector('#output')
     let p = document.createElement('p')
-    p.textContent = "Thanks user here is your greeting: " + ' "' + userInput + '"' + ". And your morning routine leaves you with:" + timeParse.checkBoxedSum.hoursForActivity + "hour(s). Please consider doing the following to fill in your day: " + unCheckBoxed;
+    p.textContent = "Thanks user here is your greeting: " + ' "' + userInput + '"' + ". And your morning routine leaves you with:" + timeParse(hoursForActivity) + "hour(s). Please consider doing the following to fill in your day: " + unCheckBoxed;
     divOutput.appendChild(p);
+    hoursForActivity = parseFloat(12);
     return;
 };
 
@@ -109,10 +115,14 @@ function validate(userInput) {
 
 document.getElementById('replay').addEventListener('click', (e) => {
     e.preventDefault();
+    checkBoxed.length = 0;
     unCheckBoxed.length = 0;
     validation.length = 0;
+    console.log(checkBoxed);
     document.getElementById('output').innerHTML = '';
     console.log(hoursForActivity);
     console.log(userInput.value);
     validate(userInput.value);
 })
+
+//unused code
