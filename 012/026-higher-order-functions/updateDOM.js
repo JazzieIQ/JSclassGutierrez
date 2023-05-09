@@ -41,7 +41,7 @@ function calculateAvg (MY_DATA) {
     const sums = MY_DATA.reduce(function (sum, obj) {
         return {
             MPG: sum.MPG + obj.MPG,
-            tripCost: sumTripCost + obj.tripCost
+            tripCost: sum.TripCost + obj.tripCost
         }
     }, 0)
     const avgMPG = sums.MPG/numberOfObj
