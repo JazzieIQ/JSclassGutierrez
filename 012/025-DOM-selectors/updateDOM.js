@@ -13,7 +13,7 @@ function updateDOM (input, id) {
 returns an object */
 
 function trackMPGandCost (miles, gallons, price) {
-    const MPG  =miles/gallons
+    const MPG  = miles/gallons
     const tripCost = gallons * price
     updateDOM(`Miles per gallon  is ${MPG} and trip cost is ${tripCost}`, '#output')
     return {
