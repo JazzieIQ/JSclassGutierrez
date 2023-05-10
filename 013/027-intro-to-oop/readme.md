@@ -1,0 +1,1 @@
+In consideration of what OOP is and using class to instantiate objects classes by defintion are a more general concept than objects. Classes are blueprints of objects. So they help to organize code by grouping related attributes and methods together. We used a class to create a new person defined object.
