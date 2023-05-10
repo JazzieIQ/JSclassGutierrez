@@ -1,0 +1,1 @@
+My thought would be to place My_DATA into a class as it appears this is where it was leading to run a few arthimatic operations from some number literals and return a an object. I would then call the class and pass the values to the class and return the object. I would pass the MY-Data returned object to render the table from that object.
