@@ -8,7 +8,18 @@ class person {
         console.log(`Hello, my name is ${this.firstname} and I am ${this.age} years old.`);
     }
 }
-const MacMac = new person("Mac Mac", "Gutierrez", "32");
+class student extends person {
+    constructor(firstname, lastname, age, classList) {
+        super(firstname, lastname, age);
+        this.classList = classList;
+    }
+    greeting() {
+        console.log(`Hello, my name is ${this.firstname} and I am ${this.age} years old and am taking the following classes: ${this.classList}`);
+    }
+
+}
+
+const MacMac = new student("Mac Mac", "Gutierrez", "32", ["CIT-93", "CIT-63", "CIT-28"]);
 MacMac.greeting();
 const Stacia = new person("Stacia", "Gutierrez", "29");
 Stacia.greeting();
