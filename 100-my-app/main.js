@@ -142,7 +142,7 @@ function renderEditDelBtn(MY_DATA, index) {
     return td;
 }
 
-/* renderTable hands the render the DOM for the array of object (MY_DATA)  */
+//renderTable hands the render the DOM for the array of object (MY_DATA)
 
 function renderTable(MY_DATA) {
     TBL_OUTPUT.innerHTML = ''
