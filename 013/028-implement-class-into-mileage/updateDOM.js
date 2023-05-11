@@ -1,5 +1,4 @@
-import { Trip } from "./trip.js";
-
+const AVG_OUTPUT = document.getElementById('output-avg');
 const ERR = document.getElementById('err')
 /* updateDOM function takes in input (string value) and id (to determine DOM location to update) 
 and creates and updates DOM elements*/
@@ -12,11 +11,11 @@ function updateDOM (input, id) {
 }
 
 /* trackMPGandCost function takes in miles, gallons and price and calculates MPG and tripCost and 
-returns an object 
+returns an object*/
 function trackMPGandCost (miles, gallons, price) {
-    const MPG  =miles/gallons
-    const tripCost = gallons * price
-    updateDOM(`Miles per gallon  is ${MPG} and trip cost is ${tripCost}`, '#output')
+    const MPG  = Number(miles/gallons).toFixed(2)
+    const tripCost = Number(gallons * price).toFixed(2)
+    //updateDOM(`Miles per gallon  is ${MPG} and trip cost is ${tripCost}`, '#output')
     return {
         miles: miles,
         gallons: gallons,
@@ -25,13 +24,12 @@ function trackMPGandCost (miles, gallons, price) {
         tripCost: tripCost,
     }
 }
-*/
 
 /* calculateAvg function loops over the MY_DATA to determine average MPG and Trip Cost
 */
 
 function calculateAvg(MY_DATA) {
-    //AVG_OUTPUT.innerHTML= ''
+    AVG_OUTPUT.innerHTML= ''
     const numberOfObj = MY_DATA.length;
     const sums = MY_DATA.reduce(function(sum, obj){
         return {
@@ -39,30 +37,30 @@ function calculateAvg(MY_DATA) {
             _tripCost: sum._tripCost + obj._tripCost
         }
     })
-    console.log(sums._MPG + ", " +  sums._tripCost + ', ' + numberOfObj);
+    console.log(sums);
+    //console.log(sums._MPG + ", " +  sums._tripCost + ', ' + numberOfObj);
     const avgMPG = Number((sums._MPG / numberOfObj).toFixed(2));
     const avgTripCost = Number((sums._tripCost / numberOfObj).toFixed(2));
     updateDOM(`Average MPG is ${avgMPG}`, '#output-avg');
     updateDOM(`Average Trip Cost is ${avgTripCost}`, '#output-avg');
 }
 
-
 /* isFormValid takes in miles, gallons and price and does simple validation and 
 returns boolean or truthy value back to eventlisteners */
 
-function isFormValid (miles, gallons, price) {
-    const errMsg = []
+function isFormValid(miles, gallons, price) {
+    const errMsg = [];
     if (miles === 0 || gallons === 0 || price === 0) {
-        errMsg.push('Make sure your input value greater than 0!!, Try Again')
+        errMsg.push('Make sure your input value greater than 0!!, Try Again');
     }
     if (price > 1000) {
-        errMsg.push('Really!!!?? I think this is in error...Try again')
+        errMsg.push('Really!!!?? I think this is in error...Try again');
     }
     if (errMsg.length > 0) {
-        ERR.textContent = errMsg
+        ERR.textContent = errMsg;
     } else {
-        return true
+        return true;
     }
 }
 
-export { isFormValid, calculateAvg, Trip }; //, trackMPGandCost};
+export {isFormValid, calculateAvg, trackMPGandCost}

@@ -2,4 +2,4 @@ My thought would be to place My_DATA into a class as it appears this is where it
 
 I would implement Trip wherever TrackMPGAndTripCost was before. I would then call the Trip class and pass the values to the class and return the object. I would pass the Trip returned object to render the table from that object.
 
-The averages no longer are coming back as a number for my code. My calculate AVerage function was the fiorst area. After going back and recoding along then I ran into a breakage in the render.
+The averages no longer are coming back as a number for my code. My calculate AVerage function was the first area. After going back and recoding along then I ran into a breakage in the render. I currently do no havw working code even after following the "working code" solution. Can you please assist me further in correcting what i'm missing?

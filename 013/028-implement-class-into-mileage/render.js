@@ -1,4 +1,6 @@
 import { saveTripData } from "./storage.js";
+import { calculateAvg } from "./updateDOM.js";
+import { Trip } from "./trip.js";
 const FORM = document.getElementById('form-input')
 const TBL_OUTPUT = document.getElementById('table-out')
 
@@ -65,10 +67,10 @@ function renderTable(MY_DATA) {
             tr.appendChild(btnTD);
             tbl.appendChild(tr);
         });
-    
+    calculateAvg(MY_DATA);
 }
 
 function preventEdDelBtn() { 
 document.getElementsByClassName
 }
-export { renderTable, preventEdDelBtn}
+export {renderTable, preventEdDelBtn}

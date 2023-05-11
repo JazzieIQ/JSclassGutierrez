@@ -1,6 +1,6 @@
-import { renderTable, preventEdDelBtn } from "./render.js";
+import { renderTable} from "./render.js";
 import { saveTripData, getTripData } from "./storage.js";
-import { isFormValid, calculateAvg, /* trackMPGandCost*/ } from "./updateDOM.js";
+import { isFormValid, trackMPGandCost } from "./updateDOM.js";
 import { Trip } from "./trip.js";
 
 /* Global const for updating DOM elements by their id*/
@@ -8,10 +8,8 @@ import { Trip } from "./trip.js";
 const FORM = document.getElementById('form-input')
 const ERR = document.getElementById('err')
 const AVG_OUTPUT = document.getElementById('output-avg')
-const MY_DATA = getTripData() || []
+const MY_DATA = getTripData() // || []
 renderTable(MY_DATA)
-
-
 
 /* Eventlisteners for form submit button, checks validation and if valid saves input data and calculated 
 data as an object into global array named MY_DATA */
@@ -27,11 +25,12 @@ FORM.addEventListener('submit', (e) => {
         ERR.textContent = ''
         AVG_OUTPUT.textContent = ''
         const trip = new Trip(miles, gallons, price)
-        localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
-        MY_DATA.push(trip); // || [trip]
-        saveTripData(MY_DATA)
+        //localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
+        console.log(trip);
+        MY_DATA.push(trip); // || [trip]     
+        console.log(MY_DATA);
         renderTable(MY_DATA, FORM);
-        calculateAvg(MY_DATA);
+        saveTripData(MY_DATA)
     }
     FORM.reset()
 });
