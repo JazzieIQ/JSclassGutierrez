@@ -1,3 +1,5 @@
+import { Trip } from "./trip.js";
+
 const ERR = document.getElementById('err')
 /* updateDOM function takes in input (string value) and id (to determine DOM location to update) 
 and creates and updates DOM elements*/
@@ -10,8 +12,7 @@ function updateDOM (input, id) {
 }
 
 /* trackMPGandCost function takes in miles, gallons and price and calculates MPG and tripCost and 
-returns an object */
-
+returns an object 
 function trackMPGandCost (miles, gallons, price) {
     const MPG  =miles/gallons
     const tripCost = gallons * price
@@ -24,6 +25,7 @@ function trackMPGandCost (miles, gallons, price) {
         tripCost: tripCost,
     }
 }
+*/
 
 /* calculateAvg function loops over the MY_DATA to determine average MPG and Trip Cost
 */
@@ -33,16 +35,17 @@ function calculateAvg(MY_DATA) {
     const numberOfObj = MY_DATA.length;
     const sums = MY_DATA.reduce(function(sum, obj){
         return {
-            MPG: sum.MPG + obj.MPG,
-            tripCost: sum.tripCost + obj.tripCost
+            _MPG: sum._MPG + obj._MPG,
+            _tripCost: sum._tripCost + obj._tripCost
         }
     })
-    console.log(sums.MPG + ", " +  sums.tripCost + ', ' + numberOfObj);
-    const avgMPG = Number((sums.MPG / numberOfObj).toFixed(2));
-    const avgTripCost = Number((sums.tripCost / numberOfObj).toFixed(2));
+    console.log(sums._MPG + ", " +  sums._tripCost + ', ' + numberOfObj);
+    const avgMPG = Number((sums._MPG / numberOfObj).toFixed(2));
+    const avgTripCost = Number((sums._tripCost / numberOfObj).toFixed(2));
     updateDOM(`Average MPG is ${avgMPG}`, '#output-avg');
     updateDOM(`Average Trip Cost is ${avgTripCost}`, '#output-avg');
 }
+
 
 /* isFormValid takes in miles, gallons and price and does simple validation and 
 returns boolean or truthy value back to eventlisteners */
@@ -62,4 +65,4 @@ function isFormValid (miles, gallons, price) {
     }
 }
 
-export {isFormValid, calculateAvg, trackMPGandCost,}
+export { isFormValid, calculateAvg, Trip }; //, trackMPGandCost};

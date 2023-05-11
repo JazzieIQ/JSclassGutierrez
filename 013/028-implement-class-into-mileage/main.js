@@ -1,6 +1,7 @@
 import { renderTable, preventEdDelBtn } from "./render.js";
 import { saveTripData, getTripData } from "./storage.js";
-import {isFormValid, calculateAvg, trackMPGandCost} from "./updateDOM.js";
+import { isFormValid, calculateAvg, /* trackMPGandCost*/ } from "./updateDOM.js";
+import { Trip } from "./trip.js";
 
 /* Global const for updating DOM elements by their id*/
 
@@ -25,9 +26,9 @@ FORM.addEventListener('submit', (e) => {
     if (isValid) {
         ERR.textContent = ''
         AVG_OUTPUT.textContent = ''
-        const dataObj = trackMPGandCost(miles, gallons, price)
+        const trip = new Trip(miles, gallons, price)
         localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
-        MY_DATA.push(dataObj) || [dataObj]
+        MY_DATA.push(trip); // || [trip]
         saveTripData(MY_DATA)
         renderTable(MY_DATA, FORM);
         calculateAvg(MY_DATA);
